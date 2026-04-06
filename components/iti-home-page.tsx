@@ -22,15 +22,17 @@ import ItiMapCanvas from "@/components/iti-map-canvas"
 
 function BrandLogo({
   className,
+  src,
   priority = false,
 }: {
   className: string
+  src: string
   priority?: boolean
 }) {
   return (
     <span className={`iti-logo-shell ${className}`}>
       <Image
-        src="/images/imperial-tech-logo-n-transparent.png"
+        src={src}
         alt="Imperial Tech Innovations"
         fill
         priority={priority}
@@ -235,7 +237,11 @@ export default function ItiHomePage() {
 
       <nav className={`iti-nav${navScrolled ? " scrolled" : ""}`}>
         <a href="#home" className="iti-brand">
-          <BrandLogo className="iti-brand-logo-shell" priority />
+          <BrandLogo
+            className="iti-brand-logo-shell"
+            src="/images/imperial-tech-logo-b.png"
+            priority
+          />
         </a>
 
         <ul className="iti-nav-links" aria-label="Primary">
@@ -638,7 +644,10 @@ export default function ItiHomePage() {
       <footer className="iti-footer">
         <div className="iti-footer-grid">
           <div>
-            <BrandLogo className="iti-footer-logo-shell" />
+            <BrandLogo
+              className="iti-footer-logo-shell"
+              src="/images/imperial-tech-logo-n-transparent.png"
+            />
             <div className="iti-footer-brand-sub">A brand of Imperial Healthcare Systems Pvt Ltd</div>
             <p className="iti-footer-tagline">
               High-performance IT and SaaS solutions built for scale, security, and intelligence.
