@@ -658,7 +658,11 @@ export default function ItiHomePage() {
               <br />
               US: 212 N. 2nd St. STE 100, Richmond, KY 40475
               <br />
-              India: Gurugram, Haryana
+              India: M15, Ground Floor, Regus,
+              <br />
+              Welldone Tech Park, Sohna Road,
+              <br />
+              Sector 48, Gurugram - 122018, Haryana, India
             </div>
           </div>
 

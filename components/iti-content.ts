@@ -340,7 +340,11 @@ export const footerSections: FooterSection[] = [
   {
     title: "Contact",
     links: [
-      { label: "info@imperialtech.ai", href: "mailto:info@imperialtech.ai" },
+      {
+        label: "info@imperialtechinnovations.com",
+        href: "mailto:info@imperialtechinnovations.com",
+      },
+      { label: "+91 7358013585", href: "tel:+917358013585" },
       { label: "Request Consultation", href: "#contact" },
       { label: "Partner Program", href: "#contact" },
     ],
