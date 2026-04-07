@@ -46,7 +46,7 @@ export default function ItiSiteFooter() {
 
       <div className="iti-footer-bottom">
         <div className="iti-footer-copy">Copyright {year} Imperial Tech Innovations. All rights reserved.</div>
-        <div className="iti-footer-tagline-bottom">Built for outcomes. Engineered for scale.</div>
+        <div className="iti-footer-tagline-bottom">Engineer The Future</div>
       </div>
     </footer>
   )
