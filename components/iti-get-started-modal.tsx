@@ -98,6 +98,7 @@ export default function ItiGetStartedModal({ open, onClose }: ItiGetStartedModal
           email: normalizedEmail,
           service: normalizedService,
           message: normalizedMessage,
+          kind: "get-started",
           source: "imperia",
         }),
       })
