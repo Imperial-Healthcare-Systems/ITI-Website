@@ -457,6 +457,7 @@ export const footerSections: FooterSection[] = [
         href: "mailto:info@imperialtechinnovations.com",
       },
       { label: "+91 7358013585", href: "tel:+917358013585" },
+      { label: "+1-(859) 978-8780", href: "tel:+18599788780" },
       { label: "Request Consultation", href: "/#contact" },
       { label: "Partner Program", href: "/#contact" },
     ],

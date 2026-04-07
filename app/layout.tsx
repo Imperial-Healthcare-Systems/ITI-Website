@@ -33,7 +33,7 @@ const itiMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Imperia.AI | AI Healthcare Revenue Cycle Management Platform",
+  title: "Imperial Tech Innovations | AI Healthcare Revenue Cycle Management Platform",
   description:
     "Imperia.ai by Imperial Healthcare Systems is an AI-powered healthcare revenue cycle management platform offering medical billing automation, denial management, predictive analytics, and revenue optimization.",
 
