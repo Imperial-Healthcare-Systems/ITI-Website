@@ -1,0 +1,367 @@
+.iti-about-page {
+  cursor: auto;
+}
+
+.iti-about-main {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+.iti-about-hero {
+  padding-top: 168px;
+  padding-bottom: 84px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top right, rgba(201, 169, 110, 0.08), transparent 32%),
+    radial-gradient(circle at 20% 18%, rgba(26, 107, 245, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(6, 10, 20, 0.96), rgba(3, 6, 13, 1));
+}
+
+.iti-about-title {
+  margin: 0;
+  max-width: 12ch;
+  font-family: var(--font-iti-display), Georgia, serif;
+  font-size: clamp(3.4rem, 7vw, 6.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.iti-about-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.iti-about-section {
+  background: linear-gradient(180deg, rgba(3, 6, 13, 1), rgba(6, 10, 20, 1));
+}
+
+.iti-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.iti-about-copy p {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--silver);
+}
+
+.iti-about-copy p:last-of-type {
+  margin-bottom: 0;
+}
+
+.iti-about-quote-card {
+  margin-top: 3rem;
+  padding: 2.25rem 2.4rem;
+  border-left: 1px solid var(--gold);
+  background: linear-gradient(135deg, rgba(232, 201, 138, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.iti-about-quote-card blockquote {
+  margin: 0;
+  font-family: var(--font-iti-display), Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--gold-bright);
+}
+
+.iti-about-capabilities {
+  border-top: 1px solid var(--border);
+}
+
+.iti-about-capability {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.iti-about-capability-num {
+  padding-top: 0.2rem;
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.iti-about-capability-title {
+  margin: 0 0 0.55rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.iti-about-capability-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--steel);
+}
+
+.iti-about-leadership {
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(6, 10, 20, 1), rgba(3, 6, 13, 1));
+}
+
+.iti-about-leadership-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.iti-about-leadership-cta {
+  flex-shrink: 0;
+}
+
+.iti-about-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 52px;
+}
+
+.iti-about-leader-card,
+.iti-leadership-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(10, 16, 32, 0.94), rgba(6, 10, 20, 0.98));
+  transition: border-color 0.35s ease, background 0.35s ease, transform 0.35s var(--ease);
+}
+
+.iti-about-leader-card::before,
+.iti-leadership-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--grad-gold);
+  transition: transform 0.45s var(--ease);
+}
+
+.iti-about-leader-card:hover,
+.iti-leadership-card:hover {
+  border-color: var(--gold-border);
+  background: linear-gradient(180deg, rgba(12, 19, 35, 0.98), rgba(8, 13, 24, 1));
+  transform: translateY(-3px);
+}
+
+.iti-about-leader-card:hover::before,
+.iti-leadership-card:hover::before {
+  transform: scaleX(1);
+}
+
+.iti-about-leader-card {
+  padding: 32px 30px;
+}
+
+.iti-about-leader-role,
+.iti-leadership-role,
+.iti-leadership-label {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.iti-about-leader-name,
+.iti-leadership-name {
+  margin: 0.9rem 0 0.45rem;
+  font-family: var(--font-iti-display), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.02;
+  color: var(--white);
+}
+
+.iti-about-leader-name {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+}
+
+.iti-leadership-name {
+  font-size: clamp(2rem, 3vw, 2.65rem);
+}
+
+.iti-about-leader-org,
+.iti-leadership-org {
+  color: var(--steel);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.iti-about-leader-preview {
+  margin: 1.25rem 0 1.8rem;
+  color: var(--silver);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.iti-about-leader-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.iti-about-leader-link::after {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.3s var(--ease);
+}
+
+.iti-about-leader-link:hover::after,
+.iti-about-leader-link:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.iti-leadership-hero-inner {
+  max-width: 920px;
+}
+
+.iti-leadership-title {
+  max-width: 11ch;
+}
+
+.iti-leadership-intro {
+  max-width: 760px;
+  margin-top: 1.7rem;
+  font-size: 1rem;
+  line-height: 1.86;
+  color: var(--silver);
+}
+
+.iti-leadership-section {
+  background: linear-gradient(180deg, rgba(3, 6, 13, 1), rgba(6, 10, 20, 1));
+}
+
+.iti-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.iti-leadership-card {
+  padding: 38px 34px;
+  scroll-margin-top: 110px;
+}
+
+.iti-leadership-card-head {
+  margin-bottom: 1.8rem;
+}
+
+.iti-leadership-copy p {
+  margin: 0 0 1.35rem;
+  font-size: 0.98rem;
+  line-height: 1.86;
+  color: var(--silver);
+}
+
+.iti-leadership-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.iti-leadership-subsection {
+  margin-top: 2rem;
+}
+
+.iti-leadership-expertise {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.iti-leadership-expertise li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--platinum);
+}
+
+.iti-leadership-expertise li::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  width: 8px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.iti-leadership-mandate {
+  padding: 1.5rem 1.45rem;
+  border-left: 1px solid var(--gold);
+  background: linear-gradient(135deg, rgba(232, 201, 138, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.iti-leadership-mandate p {
+  margin: 1rem 0 0;
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--silver);
+}
+
+@media (max-width: 980px) {
+  .iti-about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .iti-about-leadership-head {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .iti-about-leadership-grid,
+  .iti-leadership-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .iti-about-hero {
+    padding-top: 136px;
+    padding-bottom: 60px;
+  }
+
+  .iti-about-quote-card {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .iti-about-capability {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .iti-about-leader-card,
+  .iti-leadership-card {
+    padding: 28px 22px;
+  }
+
+  .iti-about-leader-preview,
+  .iti-leadership-copy p,
+  .iti-leadership-mandate p,
+  .iti-leadership-intro {
+    font-size: 0.92rem;
+  }
+}

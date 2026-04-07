@@ -69,19 +69,33 @@ function formatSupabaseError(table: string, errorText: string): string {
 export async function captureLeadDetailed(
   lead: Partial<LeadData>
 ): Promise<{ success: boolean; error?: string }> {
-  return insertRecord(LEADS_TABLE, {
+  const basePayload = {
     name: lead.name || "Unknown",
     email: lead.email || "",
     phone: lead.phone || "",
-   // organization: lead.organization || "",
-   // role: lead.role || "",
-   // message: lead.message || "",
     source: lead.source || "imperia",
     persona: lead.persona || "general",
-   // session_id: lead.sessionId || "",
     captured_at: lead.capturedAt || new Date().toISOString(),
-   // status: "new",
-  })
+  }
+
+  const extendedPayload = {
+    ...basePayload,
+    service: lead.service || "",
+    message: lead.message || "",
+  }
+
+  const result = await insertRecord(LEADS_TABLE, extendedPayload)
+
+  if (
+    !result.success &&
+    result.error &&
+    (result.error.toLowerCase().includes("column") || result.error.toLowerCase().includes("schema cache"))
+  ) {
+    console.warn("[Supabase] Falling back to base lead payload without extended fields")
+    return insertRecord(LEADS_TABLE, basePayload)
+  }
+
+  return result
 }
 
 export async function captureLead(lead: Partial<LeadData>): Promise<boolean> {

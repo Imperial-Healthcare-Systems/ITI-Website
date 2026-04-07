@@ -4,20 +4,23 @@ import {
   Bot,
   BrainCircuit,
   BriefcaseBusiness,
-  Building2,
   Cloud,
   Code2,
+  Factory,
   Globe2,
   Hammer,
+  HeartPulse,
+  Landmark,
   LockKeyhole,
   MessageSquareText,
   Palette,
   PencilRuler,
-  Rocket,
   Search,
   ShieldCheck,
+  ShoppingBag,
   Smartphone,
   TrendingUp,
+  Truck,
   Users,
   Workflow,
 } from "lucide-react"
@@ -65,12 +68,30 @@ export type FooterSection = {
   links: NavLink[]
 }
 
+export type AboutCapability = {
+  number: string
+  title: string
+  description: string
+}
+
+export type LeadershipProfile = {
+  slug: string
+  name: string
+  role: string
+  organization: string
+  preview: string
+  biography: string[]
+  expertise: string[]
+  mandate: string
+}
+
 export const navLinks: NavLink[] = [
-  { label: "Services", href: "#services" },
-  { label: "Industries", href: "#industries" },
-  { label: "Process", href: "#process" },
+  { label: "Services", href: "/#services" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/about" },
   { label: "AI Assistant", href: "/assistant" },
-  { label: "Launch Kit", href: "#startup" },
+  { label: "Launch Kit", href: "/#startup" },
 ]
 
 export const marqueeItems = [
@@ -221,28 +242,40 @@ export const launchTiers: LaunchTier[] = [
 
 export const industries: IndustryCard[] = [
   {
-    title: "Startups",
+    title: "Healthcare & Life Sciences",
     description:
-      "From MVP to scale, we architect the technical foundation that grows with your ambition.",
-    icon: Rocket,
+      "HIPAA-conscious platforms, patient workflow systems, and operational intelligence for providers, diagnostics, and health-tech innovators.",
+    icon: HeartPulse,
   },
   {
-    title: "SaaS Companies",
+    title: "FinTech & Banking",
     description:
-      "Platform engineering, multi-tenancy, and growth systems for software products at every stage.",
-    icon: Cloud,
+      "Secure digital products, compliance-ready workflows, and core integrations that modernize financial operations without compromising control.",
+    icon: Landmark,
   },
   {
-    title: "Enterprises",
+    title: "Manufacturing & Industry 4.0",
     description:
-      "Digital transformation, modernization, and enterprise AI for large organizations with real complexity.",
-    icon: Building2,
+      "Connected operations, plant-floor visibility, and automation systems that turn fragmented production data into measurable throughput gains.",
+    icon: Factory,
   },
   {
-    title: "Digital Businesses",
+    title: "E-commerce & Retail",
     description:
-      "Commerce, marketplace, and platform operations that demand speed, reliability, and visibility.",
-    icon: Globe2,
+      "High-conversion commerce platforms and omnichannel systems engineered to improve margin, retention, and execution speed.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Logistics & Supply Chain",
+    description:
+      "Real-time tracking, warehouse orchestration, and planning systems that reduce delays, improve accuracy, and strengthen delivery performance.",
+    icon: Truck,
+  },
+  {
+    title: "AI & Deep Tech Companies",
+    description:
+      "Scalable AI infrastructure, product engineering, and data pipelines that move advanced technology teams from prototype to production.",
+    icon: BrainCircuit,
   },
 ]
 
@@ -315,26 +348,105 @@ export const whyItems: WhyItem[] = [
   },
 ]
 
+export const aboutParagraphs = [
+  "Imperial Tech Innovations is the technology division of Imperial Group - built on the conviction that technology, when engineered with discipline, becomes the most powerful strategic asset an organisation can hold.",
+  "We specialise in designing, engineering, and deploying scalable, intelligent, and future-ready technology systems for enterprises, corporations, and growth-stage businesses worldwide.",
+  "With dual operational presence in the United States and India, we deliver the efficiency of global delivery with the quality standards that premium clients expect.",
+]
+
+export const aboutCapabilities: AboutCapability[] = [
+  {
+    number: "01",
+    title: "Technology Consulting",
+    description: "Strategic guidance from vision through to enterprise-scale execution.",
+  },
+  {
+    number: "02",
+    title: "System Architecture",
+    description: "Scalable, resilient blueprints engineered for long-term performance.",
+  },
+  {
+    number: "03",
+    title: "Software Engineering",
+    description: "Precision-built platforms and services that perform under real-world load.",
+  },
+  {
+    number: "04",
+    title: "Automation & AI",
+    description: "Intelligent systems that eliminate bottlenecks and enable data-driven decisions.",
+  },
+]
+
+export const aboutQuote =
+  "We don't merely deliver technology. We engineer the systems that power growth."
+
+export const leadershipProfiles: LeadershipProfile[] = [
+  {
+    slug: "pabitra-ratan-dash",
+    name: "Er. Pabitra Ratan Dash",
+    role: "Founder & Chief Executive Officer",
+    organization: "Imperial Tech Innovations | Imperial Group",
+    preview:
+      "Systems-minded leadership shaping Imperial's technology vision, enterprise architecture standards, and long-horizon institutional direction.",
+    biography: [
+      "Er. Pabitra Ratan Dash is the Founder and Chief Executive Officer of Imperial Tech Innovations. A graduate of Computer Science & Engineering, he brings a rare combination of systems-level thinking and enterprise operations leadership that forms the technical and institutional backbone of Imperial Group.",
+      "His engineering foundation enables him to architect scalable, performance-driven technology systems and translate complex operational challenges into elegant technical solutions - a capability that defines Imperial's approach to building intelligent, integrated platforms for enterprise clients.",
+    ],
+    expertise: [
+      "Enterprise technology architecture & systems design",
+      "CSE-grounded software & platform engineering",
+      "Technology strategy & digital transformation",
+      "End-to-end enterprise operations leadership",
+      "Scalable system integration & performance optimisation",
+    ],
+    mandate:
+      "Er. Dash leads the institutional direction and technical vision of Imperial Tech Innovations - positioning the firm as a technology-first global consulting enterprise defined by engineering precision, proprietary methodology, and long-term institutional value creation.",
+  },
+  {
+    slug: "milan-mala-dash",
+    name: "Ms. Milan Mala Dash",
+    role: "Co-Founder & Managing Director",
+    organization: "Imperial Tech Innovations | Imperial Group",
+    preview:
+      "Governance-led leadership ensuring financial discipline, compliance readiness, and operational coherence across the institution.",
+    biography: [
+      "Ms. Milan Mala Dash serves as Co-Founder and Managing Director of Imperial Tech Innovations, with over 13 years of professional experience and an M.Phil. alongside ongoing doctoral research. She provides the administrative and financial governance architecture that enables Imperial to operate with institutional discipline at every level.",
+      "Ms. Dash oversees internal organisational structure, financial controls, compliance alignment, and the people framework that defines Imperial's internal culture of precision and accountability. Her leadership ensures that the firm's delivery functions are underpinned by rigorous operational standards.",
+    ],
+    expertise: [
+      "Corporate administration & governance architecture",
+      "Internal financial controls & resource planning",
+      "Organisational hierarchy & HR structure",
+      "Compliance alignment & regulatory readiness",
+      "Quality assurance & internal audit frameworks",
+    ],
+    mandate:
+      "Ms. Dash ensures that Imperial operates as a well-governed, financially disciplined, and operationally coherent institution - enabling leadership to focus on client delivery and strategic growth with confidence in the firm's internal foundations.",
+  },
+]
+
 export const footerSections: FooterSection[] = [
   {
     title: "Services",
     links: [
-      { label: "Web Development", href: "#services" },
-      { label: "Mobile Applications", href: "#services" },
-      { label: "AI and Machine Learning", href: "#services" },
-      { label: "Cloud Infrastructure", href: "#services" },
-      { label: "Data Analytics", href: "#services" },
-      { label: "IT Consulting", href: "#services" },
+      { label: "Web Development", href: "/#services" },
+      { label: "Mobile Applications", href: "/#services" },
+      { label: "AI and Machine Learning", href: "/#services" },
+      { label: "Cloud Infrastructure", href: "/#services" },
+      { label: "Data Analytics", href: "/#services" },
+      { label: "IT Consulting", href: "/#services" },
     ],
   },
   {
     title: "Company",
     links: [
+      { label: "About", href: "/about" },
+      { label: "Leadership", href: "/about/leadership" },
       { label: "AI Assistant", href: "/assistant" },
-      { label: "Our Process", href: "#process" },
-      { label: "Industries", href: "#industries" },
-      { label: "Launch Kit", href: "#startup" },
-      { label: "Careers", href: "#contact" },
+      { label: "Our Process", href: "/#process" },
+      { label: "Industries", href: "/#industries" },
+      { label: "Launch Kit", href: "/#startup" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
   {
@@ -345,8 +457,8 @@ export const footerSections: FooterSection[] = [
         href: "mailto:info@imperialtechinnovations.com",
       },
       { label: "+91 7358013585", href: "tel:+917358013585" },
-      { label: "Request Consultation", href: "#contact" },
-      { label: "Partner Program", href: "#contact" },
+      { label: "Request Consultation", href: "/#contact" },
+      { label: "Partner Program", href: "/#contact" },
     ],
   },
 ]

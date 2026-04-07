@@ -2,54 +2,29 @@
 
 import type { FormEvent } from "react"
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { ArrowRight, Menu, X } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import {
-  footerSections,
   industries,
   launchDeliverables,
   launchTiers,
   marqueeItems,
   metrics,
-  navLinks,
   processSteps,
   services,
   whyItems,
 } from "@/components/iti-content"
+import ItiIndustriesCarousel from "@/components/iti-industries-carousel"
+import ItiSiteFooter from "@/components/iti-site-footer"
+import ItiSiteHeader from "@/components/iti-site-header"
 import ItiCounter from "@/components/iti-counter"
 import ItiHeroCanvas from "@/components/iti-hero-canvas"
 import ItiMapCanvas from "@/components/iti-map-canvas"
-
-function BrandLogo({
-  className,
-  src,
-  priority = false,
-}: {
-  className: string
-  src: string
-  priority?: boolean
-}) {
-  return (
-    <span className={`iti-logo-shell ${className}`}>
-      <Image
-        src={src}
-        alt="Imperial Tech Innovations"
-        fill
-        priority={priority}
-        sizes="(max-width: 640px) 140px, 260px"
-        className="iti-logo-image"
-      />
-    </span>
-  )
-}
 
 export default function ItiHomePage() {
   const pageRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
 
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [navScrolled, setNavScrolled] = useState(false)
   const [loaderValue, setLoaderValue] = useState(0)
   const [loaderDone, setLoaderDone] = useState(false)
   const [email, setEmail] = useState("")
@@ -83,13 +58,6 @@ export default function ItiHomePage() {
       window.clearInterval(interval)
       window.clearTimeout(closeTimeout)
     }
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => setNavScrolled(window.scrollY > 20)
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
@@ -218,8 +186,6 @@ export default function ItiHomePage() {
     }
   }
 
-  const year = new Date().getFullYear()
-
   return (
     <div ref={pageRef} className="iti-page">
       <div className={`iti-loader${loaderDone ? " out" : ""}`}>
@@ -235,58 +201,7 @@ export default function ItiHomePage() {
       <div ref={dotRef} className="iti-cdot" />
       <div ref={ringRef} className="iti-cring" />
 
-      <nav className={`iti-nav${navScrolled ? " scrolled" : ""}`}>
-        <a href="#home" className="iti-brand">
-          <BrandLogo
-            className="iti-brand-logo-shell"
-            src="/images/imperial-tech-logo-b.png"
-            priority
-          />
-        </a>
-
-        <ul className="iti-nav-links" aria-label="Primary">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-          <li>
-            <a href="#contact" className="iti-nav-btn">
-              <span>Get Started</span>
-            </a>
-          </li>
-        </ul>
-
-        <button
-          type="button"
-          className={`iti-nav-toggle${drawerOpen ? " open" : ""}`}
-          aria-label={drawerOpen ? "Close menu" : "Open menu"}
-          aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen((value) => !value)}
-        >
-          <Menu size={18} className="iti-nav-toggle-icon iti-nav-toggle-menu" />
-          <X size={18} className="iti-nav-toggle-icon iti-nav-toggle-close" />
-        </button>
-      </nav>
-
-      <div className={`iti-drawer${drawerOpen ? " open" : ""}`} role="dialog" aria-modal="true">
-        <button
-          type="button"
-          className="iti-drawer-close"
-          aria-label="Close menu"
-          onClick={() => setDrawerOpen(false)}
-        >
-          Close
-        </button>
-        {navLinks.map((link) => (
-          <a key={link.label} href={link.href} onClick={() => setDrawerOpen(false)}>
-            {link.label}
-          </a>
-        ))}
-        <a href="#contact" onClick={() => setDrawerOpen(false)}>
-          Get Started
-        </a>
-      </div>
+      <ItiSiteHeader />
 
       <section className="iti-hero" id="home">
         <ItiHeroCanvas />
@@ -496,23 +411,16 @@ export default function ItiHomePage() {
               <span className="iti-section-text">Industries We Serve</span>
             </div>
             <h2 className="iti-section-title">
-              Built for <em>Every</em>
+              Engineered for
               <br />
-              Digital-First Business
+              <em>High-Value Verticals</em>
             </h2>
+            <p className="iti-section-sub">
+              We build for sectors where reliability, compliance, operational visibility, and
+              execution quality directly shape revenue, trust, and long-term scale.
+            </p>
           </div>
-          <div className="iti-industries-grid iti-reveal iti-rd1">
-            {industries.map((industry) => {
-              const Icon = industry.icon
-              return (
-                <article key={industry.title} className="iti-industry-card">
-                  <Icon className="iti-industry-icon" strokeWidth={1.7} />
-                  <h3 className="iti-industry-name">{industry.title}</h3>
-                  <p className="iti-industry-desc">{industry.description}</p>
-                </article>
-              )
-            })}
-          </div>
+          <ItiIndustriesCarousel items={industries} />
         </div>
       </section>
 
@@ -641,52 +549,7 @@ export default function ItiHomePage() {
         </div>
       </section>
 
-      <footer className="iti-footer">
-        <div className="iti-footer-grid">
-          <div>
-            <BrandLogo
-              className="iti-footer-logo-shell"
-              src="/images/imperial-tech-logo-n-transparent.png"
-            />
-            <div className="iti-footer-brand-sub">A brand of Imperial Healthcare Systems Pvt Ltd</div>
-            <p className="iti-footer-tagline">
-              High-performance IT and SaaS solutions built for scale, security, and intelligence.
-              Serving clients globally from our US and India offices.
-            </p>
-            <div className="iti-footer-legal">
-              Imperial Tech Innovations is a technology brand of Imperial Healthcare Systems Pvt Ltd.
-              <br />
-              US: 212 N. 2nd St. STE 100, Richmond, KY 40475
-              <br />
-              India: M15, Ground Floor, Regus,
-              <br />
-              Welldone Tech Park, Sohna Road,
-              <br />
-              Sector 48, Gurugram - 122018, Haryana, India
-            </div>
-          </div>
-
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <div className="iti-footer-col-title">{section.title}</div>
-              <ul className="iti-footer-links">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="iti-footer-bottom">
-          <div className="iti-footer-copy">
-            Copyright {year} Imperial Tech Innovations. All rights reserved.
-          </div>
-          <div className="iti-footer-tagline-bottom">Built for outcomes. Engineered for scale.</div>
-        </div>
-      </footer>
+      <ItiSiteFooter />
     </div>
   )
 }

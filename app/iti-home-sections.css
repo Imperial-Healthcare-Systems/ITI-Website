@@ -313,13 +313,103 @@
   text-transform: uppercase;
 }
 
-.iti-industries-grid {
-  grid-template-columns: repeat(4, 1fr);
+.iti-industries-carousel {
+  margin-top: 72px;
+}
+
+.iti-industries-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 18px;
+}
+
+.iti-industries-status {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.iti-industries-nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.iti-industries-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border-mid);
+  background: rgba(10, 16, 32, 0.82);
+  color: var(--platinum);
+  cursor: pointer;
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.iti-industries-nav-btn:hover,
+.iti-industries-nav-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--gold-strong);
+  background: rgba(18, 28, 46, 0.96);
+  color: var(--gold);
+}
+
+.iti-industries-nav-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.iti-industries-nav-btn:disabled:hover,
+.iti-industries-nav-btn:disabled:focus-visible {
+  transform: none;
+  border-color: var(--border-mid);
+  background: rgba(10, 16, 32, 0.82);
+  color: var(--platinum);
+}
+
+.iti-industries-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0));
+  touch-action: pan-y pinch-zoom;
+}
+
+.iti-industries-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.iti-industries-track {
+  display: flex;
+}
+
+.iti-industries-page {
+  flex: 0 0 100%;
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  scroll-snap-align: start;
 }
 
 .iti-industry-card {
+  min-height: 320px;
   padding: 44px 28px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .iti-industry-card::after {
@@ -343,6 +433,31 @@
 .iti-industry-desc {
   position: relative;
   z-index: 1;
+}
+
+.iti-industries-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 20px;
+}
+
+.iti-industries-dot {
+  width: 34px;
+  height: 2px;
+  padding: 0;
+  border: none;
+  background: var(--border-mid);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.iti-industries-dot:hover,
+.iti-industries-dot:focus-visible,
+.iti-industries-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 18px rgba(201, 169, 110, 0.28);
+  transform: scaleX(1.05);
 }
 
 .iti-process-section {
@@ -736,8 +851,8 @@
     grid-template-columns: 1fr;
   }
 
-  .iti-industries-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .iti-industries-controls {
+    margin-bottom: 14px;
   }
 
   .iti-footer-grid {
@@ -768,10 +883,23 @@
     width: 100%;
   }
 
-  .iti-industries-grid,
   .iti-metrics-grid,
   .iti-services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .iti-industries-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iti-industry-card {
+    min-height: 280px;
+    padding: 36px 22px;
+  }
+
+  .iti-industries-dots {
+    justify-content: flex-start;
   }
 
   .iti-footer-bottom {

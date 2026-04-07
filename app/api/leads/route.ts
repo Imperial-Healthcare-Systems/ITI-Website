@@ -6,10 +6,13 @@ const allowedSources: CallerSource[] = ["imperia", "dashonix", "irrf", "api"]
 
 export async function POST(req: Request) {
   try {
-    const { name, email, source } = await req.json()
+    const { name, phone, email, service, message, source } = await req.json()
 
     const normalizedName = typeof name === "string" ? name.trim() : ""
+    const normalizedPhone = typeof phone === "string" ? phone.trim() : ""
     const normalizedEmail = typeof email === "string" ? email.trim() : ""
+    const normalizedService = typeof service === "string" ? service.trim() : ""
+    const normalizedMessage = typeof message === "string" ? message.trim() : ""
     const normalizedSource: CallerSource =
       typeof source === "string" && allowedSources.includes(source as CallerSource)
         ? (source as CallerSource)
@@ -26,6 +29,9 @@ export async function POST(req: Request) {
     const result = await captureLeadDetailed({
       name: normalizedName || "Website Inquiry",
       email: normalizedEmail,
+      phone: normalizedPhone,
+      service: normalizedService,
+      message: normalizedMessage,
       source: normalizedSource,
       persona: "general",
       capturedAt: new Date().toISOString(),
