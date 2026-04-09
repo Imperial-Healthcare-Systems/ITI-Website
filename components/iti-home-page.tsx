@@ -393,6 +393,11 @@ export default function ItiHomePage() {
                 {tier.featured ? <div className="iti-tier-badge">Most Popular</div> : null}
                 <div className="iti-tier-name">{tier.name}</div>
                 <div className="iti-tier-price">
+                  {tier.originalPrice && (
+                    <span style={{ textDecoration: "line-through", opacity: 0.5, fontSize: "0.65em", marginRight: "6px" }}>
+                      {tier.originalPrice}
+                    </span>
+                  )}
                   {tier.price}
                   <span> one-time</span>
                 </div>

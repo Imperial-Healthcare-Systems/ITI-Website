@@ -40,6 +40,7 @@ export type ServiceCard = {
 export type LaunchTier = {
   name: string
   price: string
+  originalPrice?: string
   featured?: boolean
 }
 
@@ -235,9 +236,9 @@ export const launchDeliverables = [
 ]
 
 export const launchTiers: LaunchTier[] = [
-  { name: "Starter", price: "$4,999" },
-  { name: "Growth", price: "$9,999", featured: true },
-  { name: "Scale", price: "$19,999" },
+  { name: "Starter", price: "₹25,000 INR", originalPrice: "₹50,000 INR" },
+  { name: "Growth", price: "₹35,000 INR", originalPrice: "₹70,000 INR", featured: true },
+  { name: "Scale", price: "₹45,000 INR", originalPrice: "₹90,000 INR" },
 ]
 
 export const industries: IndustryCard[] = [

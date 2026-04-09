@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Cormorant_Garamond, DM_Mono, Geist, Geist_Mono, Outfit } from "next/font/google"
 import AuthSessionProvider from "@/components/session-provider"
+import WhatsAppButton from "@/components/whatsapp-button"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -82,6 +83,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${itiSans.variable} ${itiDisplay.variable} ${itiMono.variable} font-sans antialiased`}
       >
         <AuthSessionProvider>{children}</AuthSessionProvider>
+        <WhatsAppButton />
       </body>
     </html>
   )
