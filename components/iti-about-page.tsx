@@ -127,6 +127,15 @@ export default function ItiAboutPage() {
                   key={profile.slug}
                   className={`iti-about-leader-card iti-reveal${index > 0 ? " iti-rd1" : ""}`}
                 >
+                  {profile.photo && (
+                    <div className="iti-about-leader-photo-wrap">
+                      <img
+                        src={profile.photo}
+                        alt={profile.name}
+                        className="iti-about-leader-photo"
+                      />
+                    </div>
+                  )}
                   <div className="iti-about-leader-role">{profile.role}</div>
                   <h3 className="iti-about-leader-name">{profile.name}</h3>
                   <div className="iti-about-leader-org">{profile.organization}</div>

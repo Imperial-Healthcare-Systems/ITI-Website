@@ -39,15 +39,19 @@ export type ServiceCard = {
 
 export type TierSection = {
   title: string
+  icon: string
   features: string[]
 }
 
 export type LaunchTier = {
   name: string
+  shortName: string
   price: string
   tagline: string
+  microcopy: string
   badge?: string
   featured?: boolean
+  highlights: string[]
   sections: TierSection[]
 }
 
@@ -91,6 +95,7 @@ export type LeadershipProfile = {
   biography: string[]
   expertise: string[]
   mandate: string
+  photo?: string
 }
 
 export const navLinks: NavLink[] = [
@@ -244,150 +249,190 @@ export const launchDeliverables = [
 
 export const launchTiers: LaunchTier[] = [
   {
-    name: "LaunchPad Program",
+    name: "LaunchPad",
+    shortName: "LP",
     price: "₹23,900",
-    tagline: "Ideal to get started",
+    tagline: "Launch your brand online — fast.",
+    microcopy: "Best for new businesses & solopreneurs",
+    highlights: [
+      "Professional Logo & Brand Identity",
+      "6-Page WordPress Website",
+      "WhatsApp Inquiry Integration",
+      "On-Page SEO Setup",
+      "Google Business Profile",
+    ],
     sections: [
       {
-        title: "Brand Identity System",
-        features: [
-          "Logo Design (PNG, JPG, Vector)",
-          "Business Stationery (Letterhead + Visiting Card)",
-        ],
+        title: "Brand Layer",
+        icon: "palette",
+        features: ["Logo Design (PNG, JPG, Vector)", "Letterhead & Visiting Card"],
       },
       {
-        title: "Web Presence Layer",
-        features: [
-          "WordPress Website (up to 6 pages)",
-          "CMS Framework (Elementor/Divi)",
-          "Inquiry Capture (Form + WhatsApp trigger)",
-        ],
+        title: "Web Layer",
+        icon: "globe",
+        features: ["WordPress Website (6 pages)", "Elementor/Divi CMS", "Form + WhatsApp trigger"],
       },
       {
-        title: "Infrastructure Setup",
-        features: ["Domain Mapping", "Entry-Level Hosting Environment"],
+        title: "Infrastructure",
+        icon: "server",
+        features: ["Domain Mapping", "Entry-Level Cloud Hosting"],
       },
       {
-        title: "Visibility Essentials",
-        features: [
-          "On-Page SEO (Meta tags, Header hierarchy, URL optimization)",
-          "Google Business Profile Activation",
-        ],
+        title: "Visibility",
+        icon: "search",
+        features: ["On-Page SEO (meta, headers, URLs)", "Google Business Profile Activation"],
       },
     ],
   },
   {
-    name: "LaunchPad+ Program",
+    name: "LaunchPad+",
+    shortName: "LP+",
     price: "₹31,900",
-    tagline: "Includes everything in LaunchPad +",
+    tagline: "Everything in LaunchPad, scaled up.",
+    microcopy: "Best for growing brands ready to expand",
+    highlights: [
+      "8-Page Website with UI Enhancements",
+      "Business Email Suite (10 IDs)",
+      "4-Platform Social Media Setup",
+      "Enhanced Cloud Hosting",
+      "All LaunchPad deliverables included",
+    ],
     sections: [
       {
-        title: "Extended Web Layer",
-        features: ["Website Expansion (up to 8 pages)", "UI Section Enhancements"],
+        title: "Web Layer",
+        icon: "globe",
+        features: ["8-Page Website", "UI Section Enhancements"],
       },
       {
-        title: "Communication Stack",
-        features: ["Business Email Suite (up to 10 IDs)"],
+        title: "Communication",
+        icon: "mail",
+        features: ["Business Email Suite (10 IDs)"],
       },
       {
-        title: "Social Initialization Layer",
-        features: ["Multi-Platform Setup: Facebook, Instagram, LinkedIn, Twitter"],
+        title: "Social",
+        icon: "share2",
+        features: ["Facebook, Instagram, LinkedIn, Twitter setup"],
       },
       {
-        title: "Hosting Upgrade",
+        title: "Infrastructure",
+        icon: "server",
         features: ["Enhanced Cloud Hosting Environment"],
       },
     ],
   },
   {
-    name: "ScaleX™ Program",
+    name: "ScaleX™",
+    shortName: "SX",
     price: "₹41,900",
-    tagline: "Most chosen by founders",
+    tagline: "Full-stack growth infrastructure.",
+    microcopy: "Most chosen by founders & scaling teams",
     badge: "Most Popular",
     featured: true,
+    highlights: [
+      "15-Page Conversion-Optimised Website",
+      "Integrated CRM & Business Operations Suite",
+      "WhatsApp Bulk Messaging Panel",
+      "Advanced SEO + Social Media (12 Posts)",
+      "1 Year AMC Included",
+    ],
     sections: [
       {
-        title: "Conversion Architecture",
+        title: "Web & Conversion",
+        icon: "trending-up",
+        features: ["15-Page Advanced Website", "CTA & Lead Capture Funnel"],
+      },
+      {
+        title: "Business Systems",
+        icon: "layout-dashboard",
         features: [
-          "Advanced Website (up to 15 pages)",
-          "Funnel Structuring (CTA placement, Lead capture optimization)",
+          "CRM & ERP Suite (Leads, Invoicing, Payments)",
+          "Billing & Inventory System",
         ],
       },
       {
-        title: "Business Systems Stack",
-        features: [
-          "CRM & ERP Suite (Lead Management, Proposal & Invoice Engine, Payment Tracking)",
-          "Billing & Inventory System (Expense tracking, Recurring billing)",
-        ],
+        title: "Brand Assets",
+        icon: "file-text",
+        features: ["Company Profile Deck (10–12 pages)"],
       },
       {
-        title: "Brand Communication Assets",
-        features: ["Company Profile Deck (10–12 pages, presentation-ready)"],
-      },
-      {
-        title: "Engagement Infrastructure",
+        title: "Engagement",
+        icon: "message-square",
         features: ["WhatsApp Bulk Messaging Panel", "Social Media Manager Dashboard"],
       },
       {
-        title: "Growth Layer",
+        title: "Growth",
+        icon: "rocket",
         features: [
-          "Advanced SEO (Internal linking, Page speed, Mobile responsiveness)",
-          "Social Media Activation (4 Platforms, 12 Branded Posts)",
-          "Digital PR Distribution (2 News Publications)",
+          "Advanced SEO (speed, mobile, linking)",
+          "4-Platform Social Activation (12 Posts)",
+          "PR Distribution (2 Publications)",
         ],
       },
       {
-        title: "Support Layer",
-        features: ["1 Year AMC (Version updates, Bug resolution, Maintenance)"],
+        title: "Support",
+        icon: "headphones",
+        features: ["1 Year AMC (updates, bugs, maintenance)"],
       },
     ],
   },
   {
-    name: "AuthorityX™ Program",
+    name: "AuthorityX™",
+    shortName: "AX",
     price: "₹53,900",
-    tagline: "Built for serious businesses",
+    tagline: "Enterprise-grade authority at scale.",
+    microcopy: "Built for serious businesses & institutions",
     badge: "Premium",
+    highlights: [
+      "Custom UI/UX High-Performance Website",
+      "CRM + HRM Integrated Workflow System",
+      "Trademark Filing Support",
+      "Mobile App (Webview)",
+      "Dedicated Account Manager",
+    ],
     sections: [
       {
-        title: "Advanced Web Architecture",
-        features: ["High-Performance Website (Custom UI/UX, Scalable frontend architecture)"],
+        title: "Web Architecture",
+        icon: "code-2",
+        features: ["Custom UI/UX Website", "Scalable Frontend Architecture"],
       },
       {
-        title: "Automation Ecosystem",
+        title: "Automation",
+        icon: "zap",
+        features: ["CRM + HRM Integrated Workflow", "Employee Lifecycle & Role-Based Access"],
+      },
+      {
+        title: "HR Infrastructure",
+        icon: "users",
+        features: ["HRM Software Suite", "3000+ HR Templates, Policies & SOPs"],
+      },
+      {
+        title: "Brand Authority",
+        icon: "award",
+        features: ["Trademark Filing Support", "Advanced Brand Guidelines System"],
+      },
+      {
+        title: "Security & Infrastructure",
+        icon: "shield",
+        features: ["High-Performance Cloud Server", "SSL, DDoS Protection, Token Auth"],
+      },
+      {
+        title: "Visibility",
+        icon: "eye",
         features: [
-          "CRM + HRM Integrated Workflow (Employee lifecycle, Role-based access control)",
+          "PR Distribution (4 Premium Publications)",
+          "3000+ Social Followers Growth",
+          "Google Knowledge Panel Setup",
         ],
       },
       {
-        title: "Human Resource Infrastructure",
-        features: ["HRM Software Suite", "HR Documentation Vault (3000+ templates, Policies, SOPs)"],
-      },
-      {
-        title: "Brand Authority Layer",
-        features: ["Trademark Filing Support (excl. govt fee)", "Advanced Brand Guidelines System"],
-      },
-      {
-        title: "Infrastructure & Security",
-        features: [
-          "High-Performance Cloud Server",
-          "Security Stack (SSL, DDoS protection, Token-based auth)",
-        ],
-      },
-      {
-        title: "Growth & Visibility",
-        features: [
-          "Digital PR Distribution (4 Premium Publications)",
-          "Social Proof Acceleration (3000+ Social Followers)",
-          "Knowledge Panel Enablement",
-        ],
-      },
-      {
-        title: "Mobility Layer",
+        title: "Mobility",
+        icon: "smartphone",
         features: ["Webview Mobile Application"],
       },
       {
         title: "Priority Support",
-        features: ["Dedicated Account Management", "Fast-track AMC & escalation support"],
+        icon: "star",
+        features: ["Dedicated Account Manager", "Fast-Track AMC & Escalation Support"],
       },
     ],
   },
@@ -538,6 +583,7 @@ export const leadershipProfiles: LeadershipProfile[] = [
     slug: "pabitra-ratan-dash",
     name: "Er. Pabitra Ratan Dash",
     role: "Founder & Chief Executive Officer",
+    photo: "/images/pabiita-ratan-dash.jpeg",
     organization: "Imperial Tech Innovations | Imperial Group",
     preview:
       "Systems-minded leadership shaping Imperial's technology vision, enterprise architecture standards, and long-horizon institutional direction.",
@@ -559,6 +605,7 @@ export const leadershipProfiles: LeadershipProfile[] = [
     slug: "milan-mala-dash",
     name: "Ms. Milan Mala Dash",
     role: "Co-Founder & Managing Director",
+    photo: "/images/milan-mala-dash.jpg.jpeg",
     organization: "Imperial Tech Innovations | Imperial Group",
     preview:
       "Governance-led leadership ensuring financial discipline, compliance readiness, and operational coherence across the institution.",

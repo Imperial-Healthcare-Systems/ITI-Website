@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import {
   industries,
-  launchDeliverables,
-  launchTiers,
   marqueeItems,
   metrics,
   processSteps,
@@ -19,6 +17,7 @@ import ItiSiteHeader from "@/components/iti-site-header"
 import ItiCounter from "@/components/iti-counter"
 import ItiHeroCanvas from "@/components/iti-hero-canvas"
 import ItiMapCanvas from "@/components/iti-map-canvas"
+import ItiPricingSection from "@/components/iti-pricing-section"
 
 export default function ItiHomePage() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -359,61 +358,7 @@ export default function ItiHomePage() {
         </div>
       </section>
 
-      <section className="iti-launch-section iti-pad-lg" id="startup">
-        <div className="iti-inner iti-launch-grid">
-          <div className="iti-reveal">
-            <div className="iti-launch-label">
-              <span className="iti-launch-badge" />
-              <span className="iti-launch-label-text">Featured Offering</span>
-            </div>
-            <h2 className="iti-launch-title">
-              The <em>Startup</em>
-              <br />
-              Launch Kit
-            </h2>
-            <p className="iti-launch-body">
-              Everything a modern startup needs to move from idea to market-ready in 14 days.
-              Full-stack delivery across brand, product, systems, and launch infrastructure.
-            </p>
-            <div className="iti-launch-deliverables">
-              {launchDeliverables.map((item) => (
-                <div key={item} className="iti-launch-deliverable">
-                  {item}
-                </div>
-              ))}
-            </div>
-            <a href="#contact" className="iti-btn-primary">
-              <span>Start Your Launch</span>
-              <ArrowRight size={15} />
-            </a>
-          </div>
-          <div className="iti-launch-tiers iti-reveal iti-rd2">
-            {launchTiers.map((tier) => (
-              <article key={tier.name} className={`iti-tier${tier.featured ? " featured" : ""}`}>
-                {tier.badge ? <div className="iti-tier-badge">{tier.badge}</div> : null}
-                <div className="iti-tier-name">{tier.name}</div>
-                <div className="iti-tier-price">
-                  {tier.price}
-                  <span> one-time</span>
-                </div>
-                <div className="iti-tier-tagline">{tier.tagline}</div>
-                <div className="iti-tier-sections">
-                  {tier.sections.map((section) => (
-                    <div key={section.title} className="iti-tier-section">
-                      <div className="iti-tier-section-title">{section.title}</div>
-                      <ul className="iti-tier-features">
-                        {section.features.map((f) => (
-                          <li key={f}>{f}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ItiPricingSection />
 
       <section className="iti-pad" id="industries">
         <div className="iti-inner iti-center">
