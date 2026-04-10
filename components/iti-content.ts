@@ -37,11 +37,18 @@ export type ServiceCard = {
   icon: LucideIcon
 }
 
+export type TierSection = {
+  title: string
+  features: string[]
+}
+
 export type LaunchTier = {
   name: string
   price: string
-  originalPrice?: string
+  tagline: string
+  badge?: string
   featured?: boolean
+  sections: TierSection[]
 }
 
 export type IndustryCard = {
@@ -236,9 +243,154 @@ export const launchDeliverables = [
 ]
 
 export const launchTiers: LaunchTier[] = [
-  { name: "Starter", price: "₹25,000 INR", originalPrice: "₹50,000 INR" },
-  { name: "Growth", price: "₹35,000 INR", originalPrice: "₹70,000 INR", featured: true },
-  { name: "Scale", price: "₹45,000 INR", originalPrice: "₹90,000 INR" },
+  {
+    name: "LaunchPad Program",
+    price: "₹23,900",
+    tagline: "Ideal to get started",
+    sections: [
+      {
+        title: "Brand Identity System",
+        features: [
+          "Logo Design (PNG, JPG, Vector)",
+          "Business Stationery (Letterhead + Visiting Card)",
+        ],
+      },
+      {
+        title: "Web Presence Layer",
+        features: [
+          "WordPress Website (up to 6 pages)",
+          "CMS Framework (Elementor/Divi)",
+          "Inquiry Capture (Form + WhatsApp trigger)",
+        ],
+      },
+      {
+        title: "Infrastructure Setup",
+        features: ["Domain Mapping", "Entry-Level Hosting Environment"],
+      },
+      {
+        title: "Visibility Essentials",
+        features: [
+          "On-Page SEO (Meta tags, Header hierarchy, URL optimization)",
+          "Google Business Profile Activation",
+        ],
+      },
+    ],
+  },
+  {
+    name: "LaunchPad+ Program",
+    price: "₹31,900",
+    tagline: "Includes everything in LaunchPad +",
+    sections: [
+      {
+        title: "Extended Web Layer",
+        features: ["Website Expansion (up to 8 pages)", "UI Section Enhancements"],
+      },
+      {
+        title: "Communication Stack",
+        features: ["Business Email Suite (up to 10 IDs)"],
+      },
+      {
+        title: "Social Initialization Layer",
+        features: ["Multi-Platform Setup: Facebook, Instagram, LinkedIn, Twitter"],
+      },
+      {
+        title: "Hosting Upgrade",
+        features: ["Enhanced Cloud Hosting Environment"],
+      },
+    ],
+  },
+  {
+    name: "ScaleX™ Program",
+    price: "₹41,900",
+    tagline: "Most chosen by founders",
+    badge: "Most Popular",
+    featured: true,
+    sections: [
+      {
+        title: "Conversion Architecture",
+        features: [
+          "Advanced Website (up to 15 pages)",
+          "Funnel Structuring (CTA placement, Lead capture optimization)",
+        ],
+      },
+      {
+        title: "Business Systems Stack",
+        features: [
+          "CRM & ERP Suite (Lead Management, Proposal & Invoice Engine, Payment Tracking)",
+          "Billing & Inventory System (Expense tracking, Recurring billing)",
+        ],
+      },
+      {
+        title: "Brand Communication Assets",
+        features: ["Company Profile Deck (10–12 pages, presentation-ready)"],
+      },
+      {
+        title: "Engagement Infrastructure",
+        features: ["WhatsApp Bulk Messaging Panel", "Social Media Manager Dashboard"],
+      },
+      {
+        title: "Growth Layer",
+        features: [
+          "Advanced SEO (Internal linking, Page speed, Mobile responsiveness)",
+          "Social Media Activation (4 Platforms, 12 Branded Posts)",
+          "Digital PR Distribution (2 News Publications)",
+        ],
+      },
+      {
+        title: "Support Layer",
+        features: ["1 Year AMC (Version updates, Bug resolution, Maintenance)"],
+      },
+    ],
+  },
+  {
+    name: "AuthorityX™ Program",
+    price: "₹53,900",
+    tagline: "Built for serious businesses",
+    badge: "Premium",
+    sections: [
+      {
+        title: "Advanced Web Architecture",
+        features: ["High-Performance Website (Custom UI/UX, Scalable frontend architecture)"],
+      },
+      {
+        title: "Automation Ecosystem",
+        features: [
+          "CRM + HRM Integrated Workflow (Employee lifecycle, Role-based access control)",
+        ],
+      },
+      {
+        title: "Human Resource Infrastructure",
+        features: ["HRM Software Suite", "HR Documentation Vault (3000+ templates, Policies, SOPs)"],
+      },
+      {
+        title: "Brand Authority Layer",
+        features: ["Trademark Filing Support (excl. govt fee)", "Advanced Brand Guidelines System"],
+      },
+      {
+        title: "Infrastructure & Security",
+        features: [
+          "High-Performance Cloud Server",
+          "Security Stack (SSL, DDoS protection, Token-based auth)",
+        ],
+      },
+      {
+        title: "Growth & Visibility",
+        features: [
+          "Digital PR Distribution (4 Premium Publications)",
+          "Social Proof Acceleration (3000+ Social Followers)",
+          "Knowledge Panel Enablement",
+        ],
+      },
+      {
+        title: "Mobility Layer",
+        features: ["Webview Mobile Application"],
+      },
+      {
+        title: "Priority Support",
+        features: ["Dedicated Account Management", "Fast-track AMC & escalation support"],
+      },
+    ],
+  },
 ]
 
 export const industries: IndustryCard[] = [

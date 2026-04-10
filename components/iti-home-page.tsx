@@ -390,18 +390,25 @@ export default function ItiHomePage() {
           <div className="iti-launch-tiers iti-reveal iti-rd2">
             {launchTiers.map((tier) => (
               <article key={tier.name} className={`iti-tier${tier.featured ? " featured" : ""}`}>
-                {tier.featured ? <div className="iti-tier-badge">Most Popular</div> : null}
+                {tier.badge ? <div className="iti-tier-badge">{tier.badge}</div> : null}
                 <div className="iti-tier-name">{tier.name}</div>
                 <div className="iti-tier-price">
-                  {tier.originalPrice && (
-                    <span style={{ textDecoration: "line-through", opacity: 0.5, fontSize: "0.65em", marginRight: "6px" }}>
-                      {tier.originalPrice}
-                    </span>
-                  )}
                   {tier.price}
                   <span> one-time</span>
                 </div>
-                <div className="iti-tier-days">14-day delivery</div>
+                <div className="iti-tier-tagline">{tier.tagline}</div>
+                <div className="iti-tier-sections">
+                  {tier.sections.map((section) => (
+                    <div key={section.title} className="iti-tier-section">
+                      <div className="iti-tier-section-title">{section.title}</div>
+                      <ul className="iti-tier-features">
+                        {section.features.map((f) => (
+                          <li key={f}>{f}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
