@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Building2, Settings2, Wallet, User, ArrowRight, ArrowLeft,
@@ -386,7 +386,7 @@ export default function ItiErpEnquiry() {
                           </div>
                           <Field label="Company Name">
                             <Input value={data.companyName} onChange={(v) => set("companyName", v)}
-                              placeholder="e.g. Acme Technologies" autoFocus />
+                              placeholder="e.g. Acme Technologies" />
                           </Field>
                           <Field label="Industry">
                             <Select value={data.industry} onChange={(v) => set("industry", v)}
