@@ -19,6 +19,7 @@ import ItiHeroCanvas from "@/components/iti-hero-canvas"
 import ItiMapCanvas from "@/components/iti-map-canvas"
 import ItiPricingSection from "@/components/iti-pricing-section"
 import ItiErpEnquiry from "@/components/iti-erp-enquiry"
+import ItiGetStartedModal from "@/components/iti-get-started-modal"
 
 export default function ItiHomePage() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -31,6 +32,7 @@ export default function ItiHomePage() {
   const [submitting, setSubmitting] = useState(false)
   const [formError, setFormError] = useState("")
   const [formSuccess, setFormSuccess] = useState(false)
+  const [consultModalOpen, setConsultModalOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.classList.add("iti-home-html")
@@ -223,10 +225,10 @@ export default function ItiHomePage() {
             intelligent automation to cloud-native platforms built for what comes next.
           </p>
           <div className="iti-hero-ctas">
-            <a href="#contact" className="iti-btn-primary">
+            <button type="button" className="iti-btn-primary" onClick={() => setConsultModalOpen(true)}>
               <span>Request Consultation</span>
               <ArrowRight size={15} />
-            </a>
+            </button>
             <a href="#services" className="iti-btn-outline">
               <span>Explore Services</span>
               <ArrowRight size={13} />
@@ -510,6 +512,8 @@ export default function ItiHomePage() {
       </section>
 
       <ItiSiteFooter />
+
+      <ItiGetStartedModal open={consultModalOpen} onClose={() => setConsultModalOpen(false)} />
     </div>
   )
 }
