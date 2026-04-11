@@ -18,6 +18,7 @@ import ItiCounter from "@/components/iti-counter"
 import ItiHeroCanvas from "@/components/iti-hero-canvas"
 import ItiMapCanvas from "@/components/iti-map-canvas"
 import ItiPricingSection from "@/components/iti-pricing-section"
+import ItiErpEnquiry from "@/components/iti-erp-enquiry"
 
 export default function ItiHomePage() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -460,6 +461,8 @@ export default function ItiHomePage() {
           </div>
         </div>
       </section>
+
+      <ItiErpEnquiry />
 
       <section className="iti-cta-section iti-pad-lg" id="contact">
         <div className="iti-cta-glow" />

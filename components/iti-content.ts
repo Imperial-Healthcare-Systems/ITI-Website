@@ -260,6 +260,7 @@ export const launchTiers: LaunchTier[] = [
       "WhatsApp Inquiry Integration",
       "On-Page SEO Setup",
       "Google Business Profile",
+      "1 Year AMC Included",
     ],
     sections: [
       {
@@ -291,17 +292,19 @@ export const launchTiers: LaunchTier[] = [
     tagline: "Everything in LaunchPad, scaled up.",
     microcopy: "Best for growing brands ready to expand",
     highlights: [
-      "8-Page Website with UI Enhancements",
+      "8-Page Website (WordPress / Next.js / React.js)",
       "Business Email Suite (10 IDs)",
       "4-Platform Social Media Setup",
+      "Social Media & Creative Designing",
       "Enhanced Cloud Hosting",
       "All LaunchPad deliverables included",
+      "1 Year AMC Included",
     ],
     sections: [
       {
         title: "Web Layer",
         icon: "globe",
-        features: ["8-Page Website", "UI Section Enhancements"],
+        features: ["8-Page Website (WordPress / Next.js / React.js)", "UI Section Enhancements"],
       },
       {
         title: "Communication",
@@ -312,6 +315,15 @@ export const launchTiers: LaunchTier[] = [
         title: "Social",
         icon: "share2",
         features: ["Facebook, Instagram, LinkedIn, Twitter setup"],
+      },
+      {
+        title: "Social Media & Creative Designing",
+        icon: "palette",
+        features: [
+          "Branded Social Media Post Designs",
+          "Creative Graphics & Visual Assets",
+          "Platform-Optimised Content",
+        ],
       },
       {
         title: "Infrastructure",
@@ -329,9 +341,10 @@ export const launchTiers: LaunchTier[] = [
     badge: "Most Popular",
     featured: true,
     highlights: [
-      "15-Page Conversion-Optimised Website",
+      "15-Page Website (WordPress / Next.js / React.js)",
       "Integrated CRM & Business Operations Suite",
       "WhatsApp Bulk Messaging Panel",
+      "Social Media & Creative Designing",
       "Advanced SEO + Social Media (12 Posts)",
       "1 Year AMC Included",
     ],
@@ -339,7 +352,7 @@ export const launchTiers: LaunchTier[] = [
       {
         title: "Web & Conversion",
         icon: "trending-up",
-        features: ["15-Page Advanced Website", "CTA & Lead Capture Funnel"],
+        features: ["15-Page Website (WordPress / Next.js / React.js)", "CTA & Lead Capture Funnel"],
       },
       {
         title: "Business Systems",
@@ -360,11 +373,21 @@ export const launchTiers: LaunchTier[] = [
         features: ["WhatsApp Bulk Messaging Panel", "Social Media Manager Dashboard"],
       },
       {
+        title: "Social Media & Creative Designing",
+        icon: "palette",
+        features: [
+          "Branded Social Media Post Designs",
+          "Creative Graphics & Visual Assets",
+          "Platform-Optimised Content",
+          "12 Branded Posts Across 4 Platforms",
+        ],
+      },
+      {
         title: "Growth",
         icon: "rocket",
         features: [
           "Advanced SEO (speed, mobile, linking)",
-          "4-Platform Social Activation (12 Posts)",
+          "4-Platform Social Activation",
           "PR Distribution (2 Publications)",
         ],
       },
@@ -383,17 +406,19 @@ export const launchTiers: LaunchTier[] = [
     microcopy: "Built for serious businesses & institutions",
     badge: "Premium",
     highlights: [
-      "Custom UI/UX High-Performance Website",
+      "Custom Website (WordPress / Next.js / React.js)",
       "CRM + HRM Integrated Workflow System",
+      "Social Media & Creative Designing",
       "Trademark Filing Support",
       "Mobile App (Webview)",
       "Dedicated Account Manager",
+      "1 Year AMC Included",
     ],
     sections: [
       {
         title: "Web Architecture",
         icon: "code-2",
-        features: ["Custom UI/UX Website", "Scalable Frontend Architecture"],
+        features: ["Custom UI/UX Website (WordPress / Next.js / React.js)", "Scalable Frontend Architecture"],
       },
       {
         title: "Automation",
@@ -408,12 +433,22 @@ export const launchTiers: LaunchTier[] = [
       {
         title: "Brand Authority",
         icon: "award",
-        features: ["Trademark Filing Support", "Advanced Brand Guidelines System"],
+        features: ["Trademark Filing Support", "Advanced Brand Guideline Book"],
       },
       {
         title: "Security & Infrastructure",
         icon: "shield",
         features: ["High-Performance Cloud Server", "SSL, DDoS Protection, Token Auth"],
+      },
+      {
+        title: "Social Media & Creative Designing",
+        icon: "palette",
+        features: [
+          "Branded Social Media Post Designs",
+          "Creative Graphics & Visual Assets",
+          "Platform-Optimised Content",
+          "Multi-Platform Content Strategy",
+        ],
       },
       {
         title: "Visibility",
