@@ -806,6 +806,41 @@
   line-height: 1.7;
 }
 
+.iti-pc-currency-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 1.6rem;
+  padding: 3px;
+  border: 1px solid var(--border-mid);
+  background: var(--surface);
+  border-radius: 3px;
+}
+
+.iti-pc-currency-btn {
+  padding: 7px 18px;
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.iti-pc-currency-btn:hover {
+  color: var(--platinum);
+}
+
+.iti-pc-currency-btn.active {
+  background: var(--gold);
+  color: var(--void);
+  font-weight: 600;
+}
+
 /* Grid */
 .iti-pc-grid {
   display: grid;
@@ -1423,6 +1458,18 @@
   z-index: 1;
 }
 
+.iti-industry-category {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.46rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
 .iti-industries-dots {
   display: flex;
   justify-content: center;
@@ -1631,32 +1678,55 @@
 .iti-cta-inner {
   position: relative;
   z-index: 2;
-  max-width: 860px;
+  max-width: 680px;
   text-align: center;
 }
 
 .iti-cta-sub {
-  margin: 1.4rem auto 2.8rem;
+  margin: 1.4rem auto 2.4rem;
 }
 
-.iti-cta-form {
+/* Full contact form */
+.iti-cta-form-full {
+  width: 100%;
   display: flex;
-  max-width: 460px;
-  margin: 0 auto 1rem;
-  border: 1px solid var(--border-mid);
-  overflow: hidden;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.iti-cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.iti-cta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.iti-cta-label {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
 }
 
 .iti-cta-input {
-  flex: 1;
-  min-width: 0;
-  padding: 14px 18px;
-  border: none;
-  outline: none;
+  width: 100%;
+  padding: 11px 14px;
   background: var(--deep);
+  border: 1px solid var(--border-mid);
   color: var(--platinum);
-  font-size: 0.82rem;
-  font-weight: 300;
+  font-family: var(--font-iti-sans), system-ui, sans-serif;
+  font-size: 0.84rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  -webkit-appearance: none;
 }
 
 .iti-cta-input::placeholder {
@@ -1664,21 +1734,29 @@
 }
 
 .iti-cta-input:focus {
-  background: var(--surface);
+  border-color: rgba(201, 169, 110, 0.4);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.06);
+}
+
+.iti-cta-textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .iti-cta-submit {
-  flex-shrink: 0;
-  padding: 14px 22px;
+  width: 100%;
+  padding: 14px;
   border: none;
   background: var(--gold);
   color: var(--void);
-  font-size: 0.65rem;
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: background 0.25s ease, opacity 0.2s ease;
+  margin-top: 4px;
 }
 
 .iti-cta-submit:hover {
@@ -1686,27 +1764,33 @@
 }
 
 .iti-cta-submit:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: progress;
 }
 
-.iti-cta-success,
-.iti-cta-error {
-  max-width: 460px;
-  margin: 0 auto;
-  padding: 16px 24px;
-  font-size: 0.82rem;
-  text-align: center;
-}
-
 .iti-cta-success {
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 0.84rem;
+  text-align: center;
   border: 1px solid var(--gold-border);
   background: var(--gold-ghost);
   color: var(--gold);
+  margin-bottom: 1rem;
 }
 
 .iti-cta-error {
+  font-size: 0.74rem;
   color: #ef8c7b;
+  padding: 8px 12px;
+  background: rgba(239, 140, 123, 0.06);
+  border: 1px solid rgba(239, 140, 123, 0.2);
+}
+
+@media (max-width: 560px) {
+  .iti-cta-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .iti-cta-legal {
@@ -1770,6 +1854,31 @@
   justify-content: space-between;
   padding-top: 24px;
   border-top: 1px solid var(--border);
+}
+
+.iti-footer-legal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 16px;
+  margin-top: 4px;
+}
+
+.iti-footer-legal-link {
+  font-size: 0.55rem;
+  color: var(--steel);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.iti-footer-legal-link:hover {
+  color: var(--gold);
+}
+
+.iti-footer-legal-dot {
+  font-size: 0.55rem;
+  color: var(--border);
 }
 
 .iti-footer-copy,

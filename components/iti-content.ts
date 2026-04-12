@@ -4,21 +4,29 @@ import {
   Bot,
   BrainCircuit,
   BriefcaseBusiness,
+  Building2,
+  Car,
   Cloud,
   Code2,
+  CreditCard,
   Factory,
+  GraduationCap,
   Globe2,
   Hammer,
   HeartPulse,
-  Landmark,
+  Leaf,
   LockKeyhole,
   MessageSquareText,
   Palette,
   PencilRuler,
+  Radio,
+  Scale,
   Search,
+  Shield,
   ShieldCheck,
   ShoppingBag,
   Smartphone,
+  Sprout,
   TrendingUp,
   Truck,
   Users,
@@ -28,6 +36,7 @@ import {
 export type NavLink = {
   label: string
   href: string
+  country?: string
 }
 
 export type ServiceCard = {
@@ -47,6 +56,7 @@ export type LaunchTier = {
   name: string
   shortName: string
   price: string
+  priceUsd: string
   tagline: string
   microcopy: string
   badge?: string
@@ -59,6 +69,7 @@ export type IndustryCard = {
   title: string
   description: string
   icon: LucideIcon
+  category: "Core Industries" | "Growth Industries" | "Emerging / Strategic"
 }
 
 export type ProcessStep = {
@@ -252,6 +263,7 @@ export const launchTiers: LaunchTier[] = [
     name: "LaunchPad",
     shortName: "LP",
     price: "₹23,900",
+    priceUsd: "$400",
     tagline: "Launch your brand online — fast.",
     microcopy: "Best for new businesses & solopreneurs",
     highlights: [
@@ -289,6 +301,7 @@ export const launchTiers: LaunchTier[] = [
     name: "LaunchPad+",
     shortName: "LP+",
     price: "₹31,900",
+    priceUsd: "$600",
     tagline: "Everything in LaunchPad, scaled up.",
     microcopy: "Best for growing brands ready to expand",
     highlights: [
@@ -336,6 +349,7 @@ export const launchTiers: LaunchTier[] = [
     name: "ScaleX™",
     shortName: "SX",
     price: "₹41,900",
+    priceUsd: "$800",
     tagline: "Full-stack growth infrastructure.",
     microcopy: "Most chosen by founders & scaling teams",
     badge: "Most Popular",
@@ -402,6 +416,7 @@ export const launchTiers: LaunchTier[] = [
     name: "AuthorityX™",
     shortName: "AX",
     price: "₹53,900",
+    priceUsd: "$1,000",
     tagline: "Enterprise-grade authority at scale.",
     microcopy: "Built for serious businesses & institutions",
     badge: "Premium",
@@ -474,41 +489,106 @@ export const launchTiers: LaunchTier[] = [
 ]
 
 export const industries: IndustryCard[] = [
+  // Core Industries
   {
-    title: "Healthcare & Life Sciences",
-    description:
-      "HIPAA-conscious platforms, patient workflow systems, and operational intelligence for providers, diagnostics, and health-tech innovators.",
-    icon: HeartPulse,
-  },
-  {
-    title: "FinTech & Banking",
-    description:
-      "Secure digital products, compliance-ready workflows, and core integrations that modernize financial operations without compromising control.",
-    icon: Landmark,
-  },
-  {
-    title: "Manufacturing & Industry 4.0",
-    description:
-      "Connected operations, plant-floor visibility, and automation systems that turn fragmented production data into measurable throughput gains.",
-    icon: Factory,
-  },
-  {
-    title: "E-commerce & Retail",
-    description:
-      "High-conversion commerce platforms and omnichannel systems engineered to improve margin, retention, and execution speed.",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Logistics & Supply Chain",
-    description:
-      "Real-time tracking, warehouse orchestration, and planning systems that reduce delays, improve accuracy, and strengthen delivery performance.",
-    icon: Truck,
-  },
-  {
-    title: "AI & Deep Tech Companies",
+    title: "AI & Deep Tech",
     description:
       "Scalable AI infrastructure, product engineering, and data pipelines that move advanced technology teams from prototype to production.",
     icon: BrainCircuit,
+    category: "Core Industries",
+  },
+  {
+    title: "FinTech",
+    description:
+      "Secure digital products, compliance-ready workflows, and core integrations that modernise financial operations without compromising control.",
+    icon: CreditCard,
+    category: "Core Industries",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "HIPAA-conscious platforms, patient workflow systems, and operational intelligence for providers, diagnostics, and health-tech innovators.",
+    icon: HeartPulse,
+    category: "Core Industries",
+  },
+  {
+    title: "Manufacturing",
+    description:
+      "Connected operations, plant-floor visibility, and automation systems that turn fragmented production data into measurable throughput gains.",
+    icon: Factory,
+    category: "Core Industries",
+  },
+  // Growth Industries
+  {
+    title: "E-commerce",
+    description:
+      "High-conversion commerce platforms and omnichannel systems engineered to improve margin, retention, and execution speed.",
+    icon: ShoppingBag,
+    category: "Growth Industries",
+  },
+  {
+    title: "Logistics",
+    description:
+      "Real-time tracking, warehouse orchestration, and planning systems that reduce delays, improve accuracy, and strengthen delivery performance.",
+    icon: Truck,
+    category: "Growth Industries",
+  },
+  {
+    title: "Real Estate",
+    description:
+      "Property management platforms, buyer portals, and CRM systems built for developers, brokers, and PropTech innovators at scale.",
+    icon: Building2,
+    category: "Growth Industries",
+  },
+  {
+    title: "EdTech",
+    description:
+      "Learning management systems, interactive platforms, and outcome-tracking tools that modernise education delivery for institutions and startups.",
+    icon: GraduationCap,
+    category: "Growth Industries",
+  },
+  // Emerging / Strategic
+  {
+    title: "Climate Tech",
+    description:
+      "Digital infrastructure for sustainability-focused ventures — carbon tracking, green energy platforms, and ESG reporting systems.",
+    icon: Leaf,
+    category: "Emerging / Strategic",
+  },
+  {
+    title: "AgriTech",
+    description:
+      "Farm management systems, supply chain traceability, and data-driven platforms connecting growers to markets and modern inputs.",
+    icon: Sprout,
+    category: "Emerging / Strategic",
+  },
+  {
+    title: "Cybersecurity",
+    description:
+      "Security product engineering, compliance automation, and threat intelligence platforms built for enterprises and security-first startups.",
+    icon: Shield,
+    category: "Emerging / Strategic",
+  },
+  {
+    title: "Mobility",
+    description:
+      "Fleet management, ride-tech platforms, and connected vehicle systems that power the next generation of transportation infrastructure.",
+    icon: Car,
+    category: "Emerging / Strategic",
+  },
+  {
+    title: "Telecom",
+    description:
+      "BSS/OSS modernisation, network analytics, and customer experience platforms for carriers and telecom-adjacent digital businesses.",
+    icon: Radio,
+    category: "Emerging / Strategic",
+  },
+  {
+    title: "Government",
+    description:
+      "Citizen-facing digital services, inter-departmental workflow systems, and compliance-ready platforms for public sector transformation.",
+    icon: Scale,
+    category: "Emerging / Strategic",
   },
 ]
 
@@ -691,8 +771,8 @@ export const footerSections: FooterSection[] = [
         label: "info@imperialtechinnovations.com",
         href: "mailto:info@imperialtechinnovations.com",
       },
-      { label: "+91 7358013585", href: "tel:+917358013585" },
-      { label: "+1-(859) 978-8780", href: "tel:+18599788780" },
+      { label: "+91 7358013585", href: "tel:+917358013585", country: "India" },
+      { label: "+1-(859) 978-8780", href: "tel:+18599788780", country: "USA" },
       { label: "Request Consultation", href: "/#contact" },
       { label: "Partner Program", href: "/#contact" },
     ],

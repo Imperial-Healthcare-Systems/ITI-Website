@@ -28,7 +28,7 @@ export default function ItiHomePage() {
 
   const [loaderValue, setLoaderValue] = useState(0)
   const [loaderDone, setLoaderDone] = useState(false)
-  const [email, setEmail] = useState("")
+  const [ctaForm, setCtaForm] = useState({ name: "", email: "", phone: "", message: "" })
   const [submitting, setSubmitting] = useState(false)
   const [formError, setFormError] = useState("")
   const [formSuccess, setFormSuccess] = useState(false)
@@ -146,19 +146,26 @@ export default function ItiHomePage() {
     }
   }, [])
 
+  function setCtaField(key: keyof typeof ctaForm, value: string) {
+    setCtaForm((f) => ({ ...f, [key]: value }))
+    if (formError) setFormError("")
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const normalizedEmail = email.trim()
 
-    if (!normalizedEmail) {
-      setFormError("Enter your work email.")
-      return
-    }
+    const name    = ctaForm.name.trim()
+    const email   = ctaForm.email.trim()
+    const phone   = ctaForm.phone.trim()
+    const message = ctaForm.message.trim()
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
-      setFormError("Enter a valid email address.")
-      return
+    if (!name)    { setFormError("Please enter your name."); return }
+    if (!email)   { setFormError("Please enter your email."); return }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFormError("Enter a valid email address."); return
     }
+    if (!phone)   { setFormError("Please enter your phone number."); return }
+    if (!message) { setFormError("Please add a message."); return }
 
     setSubmitting(true)
     setFormError("")
@@ -167,11 +174,7 @@ export default function ItiHomePage() {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: "Website Inquiry",
-          email: normalizedEmail,
-          source: "iti-website",
-        }),
+        body: JSON.stringify({ name, email, phone, message, source: "imperia", kind: "get-started" }),
       })
 
       if (!response.ok) {
@@ -180,7 +183,7 @@ export default function ItiHomePage() {
       }
 
       setFormSuccess(true)
-      setEmail("")
+      setCtaForm({ name: "", email: "", phone: "", message: "" })
     } catch (error: unknown) {
       setFormError(error instanceof Error ? error.message : "Unable to submit your request right now.")
     } finally {
@@ -488,26 +491,65 @@ export default function ItiHomePage() {
               Your request has been captured. We&apos;ll be in touch within one business day.
             </div>
           ) : (
-            <form className="iti-cta-form" onSubmit={handleSubmit} noValidate>
-              <input
-                className="iti-cta-input"
-                type="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value)
-                  if (formError) setFormError("")
-                }}
-                placeholder="Enter your work email"
-                autoComplete="email"
-              />
+            <form className="iti-cta-form-full" onSubmit={handleSubmit} noValidate>
+              <div className="iti-cta-row">
+                <div className="iti-cta-field">
+                  <label className="iti-cta-label">Name</label>
+                  <input
+                    className="iti-cta-input"
+                    type="text"
+                    value={ctaForm.name}
+                    onChange={(e) => setCtaField("name", e.target.value)}
+                    placeholder="Your full name"
+                    autoComplete="name"
+                  />
+                </div>
+                <div className="iti-cta-field">
+                  <label className="iti-cta-label">Phone</label>
+                  <input
+                    className="iti-cta-input"
+                    type="tel"
+                    value={ctaForm.phone}
+                    onChange={(e) => setCtaField("phone", e.target.value)}
+                    placeholder="+91 or +1 number"
+                    autoComplete="tel"
+                  />
+                </div>
+              </div>
+              <div className="iti-cta-field">
+                <label className="iti-cta-label">Work Email</label>
+                <input
+                  className="iti-cta-input"
+                  type="email"
+                  value={ctaForm.email}
+                  onChange={(e) => setCtaField("email", e.target.value)}
+                  placeholder="you@company.com"
+                  autoComplete="email"
+                />
+              </div>
+              <div className="iti-cta-field">
+                <label className="iti-cta-label">Message</label>
+                <textarea
+                  className="iti-cta-input iti-cta-textarea"
+                  value={ctaForm.message}
+                  onChange={(e) => setCtaField("message", e.target.value)}
+                  placeholder="Tell us what you're building or what you need…"
+                  rows={4}
+                />
+              </div>
+              {formError && <p className="iti-cta-error">{formError}</p>}
               <button className="iti-cta-submit" type="submit" disabled={submitting}>
-                {submitting ? "Sending..." : "Request Access"}
+                {submitting ? "Sending…" : "Send Message"}
               </button>
             </form>
           )}
 
-          {formError ? <p className="iti-cta-error">{formError}</p> : null}
-          <p className="iti-cta-legal">No spam. By submitting, you agree to our privacy policy.</p>
+          <p className="iti-cta-legal">
+            No spam. By submitting, you agree to our{" "}
+            <a href="/legal/privacy-policy" className="iti-cta-legal-link">Privacy Policy</a>,{" "}
+            <a href="/legal/terms-of-service" className="iti-cta-legal-link">Terms of Service</a>, and{" "}
+            <a href="/legal/refund-policy" className="iti-cta-legal-link">Refund Policy</a>.
+          </p>
         </div>
       </section>
 

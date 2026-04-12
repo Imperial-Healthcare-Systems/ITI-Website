@@ -1,0 +1,142 @@
+.iti-legal-page {
+  cursor: auto;
+}
+
+.iti-legal-hero {
+  padding-top: 148px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top right, rgba(201, 169, 110, 0.06), transparent 32%),
+    linear-gradient(180deg, rgba(6, 10, 20, 0.96), rgba(3, 6, 13, 1));
+}
+
+.iti-legal-eyebrow {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.iti-legal-title {
+  font-family: var(--font-iti-display), Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.iti-legal-meta {
+  font-size: 0.75rem;
+  color: var(--steel);
+  font-family: var(--font-iti-mono), monospace;
+  letter-spacing: 0.08em;
+}
+
+.iti-legal-body {
+  padding: 64px 0 100px;
+}
+
+.iti-legal-content {
+  max-width: 780px;
+}
+
+.iti-legal-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.iti-legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.iti-legal-section-title {
+  font-family: var(--font-iti-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--white);
+  margin: 0 0 1rem;
+}
+
+.iti-legal-section-num {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.iti-legal-text {
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.85;
+  margin: 0 0 1rem;
+}
+
+.iti-legal-text:last-child {
+  margin-bottom: 0;
+}
+
+.iti-legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iti-legal-list li {
+  font-size: 0.86rem;
+  color: var(--silver);
+  line-height: 1.7;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.iti-legal-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--gold-dim);
+}
+
+.iti-legal-contact-box {
+  margin-top: 1.2rem;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--gold-border);
+}
+
+.iti-legal-contact-box p {
+  font-size: 0.84rem;
+  color: var(--silver);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.iti-legal-contact-box a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.iti-legal-contact-box a:hover {
+  text-decoration: underline;
+}
+
+.iti-legal-link {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.iti-legal-link:hover {
+  text-decoration: underline;
+}

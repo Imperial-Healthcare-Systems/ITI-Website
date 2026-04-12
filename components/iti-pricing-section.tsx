@@ -34,8 +34,9 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   star: <Star size={13} />,
 }
 
-function PricingCard({ tier, index }: { tier: LaunchTier; index: number }) {
+function PricingCard({ tier, index, currency }: { tier: LaunchTier; index: number; currency: "INR" | "USD" }) {
   const [expanded, setExpanded] = useState(false)
+  const displayPrice = currency === "USD" ? tier.priceUsd : tier.price
 
   return (
     <motion.article
@@ -66,7 +67,15 @@ function PricingCard({ tier, index }: { tier: LaunchTier; index: number }) {
 
       {/* Price */}
       <div className="iti-pc-price-row">
-        <span className="iti-pc-price">{tier.price}</span>
+        <motion.span
+          key={displayPrice}
+          className="iti-pc-price"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {displayPrice}
+        </motion.span>
         <span className="iti-pc-price-label">one-time</span>
       </div>
 
@@ -143,6 +152,8 @@ function PricingCard({ tier, index }: { tier: LaunchTier; index: number }) {
 }
 
 export default function ItiPricingSection() {
+  const [currency, setCurrency] = useState<"INR" | "USD">("INR")
+
   return (
     <section className="iti-pc-section-wrap iti-pad-lg" id="startup">
       {/* Section header */}
@@ -158,12 +169,28 @@ export default function ItiPricingSection() {
           <p className="iti-pc-subheading">
             From first brand to full-scale enterprise — structured programs built for every stage.
           </p>
+
+          {/* Currency toggle */}
+          <div className="iti-pc-currency-toggle">
+            <button
+              className={`iti-pc-currency-btn${currency === "INR" ? " active" : ""}`}
+              onClick={() => setCurrency("INR")}
+            >
+              ₹ India (INR)
+            </button>
+            <button
+              className={`iti-pc-currency-btn${currency === "USD" ? " active" : ""}`}
+              onClick={() => setCurrency("USD")}
+            >
+              $ Global (USD)
+            </button>
+          </div>
         </div>
 
         {/* Cards grid */}
         <div className="iti-pc-grid">
           {launchTiers.map((tier, i) => (
-            <PricingCard key={tier.name} tier={tier} index={i} />
+            <PricingCard key={tier.name} tier={tier} index={i} currency={currency} />
           ))}
         </div>
 

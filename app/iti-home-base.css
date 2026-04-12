@@ -291,6 +291,33 @@ body.iti-home-body {
   color: var(--platinum);
 }
 
+.iti-footer-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iti-footer-phone-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.iti-footer-phone-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.iti-footer-phone-country {
+  font-family: var(--font-iti-mono), monospace;
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1;
+}
+
 .iti-nav-links a:hover::after,
 .iti-nav-links a:focus-visible::after {
   width: 100%;

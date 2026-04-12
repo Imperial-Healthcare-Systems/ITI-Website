@@ -131,6 +131,7 @@ export default function ItiIndustriesCarousel({ items }: ItiIndustriesCarouselPr
 
                 return (
                   <article key={industry.title} className="iti-industry-card">
+                    <div className="iti-industry-category">{industry.category}</div>
                     <Icon className="iti-industry-icon" strokeWidth={1.7} />
                     <h3 className="iti-industry-name">{industry.title}</h3>
                     <p className="iti-industry-desc">{industry.description}</p>
