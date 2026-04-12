@@ -1140,10 +1140,6 @@
   .iti-pc-grid {
     grid-template-columns: 1fr;
   }
-
-  .iti-pc-card.iti-pc-featured {
-    order: -1;
-  }
 }
 
 .iti-launch-label {
