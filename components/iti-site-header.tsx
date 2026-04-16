@@ -44,7 +44,12 @@ export default function ItiSiteHeader() {
         <ul className="iti-nav-links" aria-label="Primary">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              <a
+                href={link.href}
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
           <li>
@@ -83,7 +88,12 @@ export default function ItiSiteHeader() {
           Close
         </button>
         {navLinks.map((link) => (
-          <a key={link.label} href={link.href} onClick={() => setDrawerOpen(false)}>
+          <a
+            key={link.label}
+            href={link.href}
+            onClick={() => setDrawerOpen(false)}
+            {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
             {link.label}
           </a>
         ))}

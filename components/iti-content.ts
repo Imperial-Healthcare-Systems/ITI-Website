@@ -114,7 +114,7 @@ export const navLinks: NavLink[] = [
   { label: "Industries", href: "/#industries" },
   { label: "Process", href: "/#process" },
   { label: "About", href: "/about" },
-  { label: "AI Assistant", href: "/assistant" },
+  { label: "AI Assistant", href: "https://www.imperialhealthsystems.cloud/" },
   { label: "Launch Kit", href: "/#startup" },
 ]
 
@@ -757,7 +757,7 @@ export const footerSections: FooterSection[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Leadership", href: "/about/leadership" },
-      { label: "AI Assistant", href: "/assistant" },
+      { label: "AI Assistant", href: "https://www.imperialhealthsystems.cloud/" },
       { label: "Our Process", href: "/#process" },
       { label: "Industries", href: "/#industries" },
       { label: "Launch Kit", href: "/#startup" },
