@@ -111,6 +111,12 @@ export default function Home() {
     scrollToBottom()
   }, [messages, isLoading, scrollToBottom])
 
+  // Lock page scroll for full-screen chat layout
+  useEffect(() => {
+    document.documentElement.classList.add("assistant-page")
+    return () => document.documentElement.classList.remove("assistant-page")
+  }, [])
+
   // Focus chat input when chat opens
   useEffect(() => {
     if (isChatOpen && chatInputRef.current) {

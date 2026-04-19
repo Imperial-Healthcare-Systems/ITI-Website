@@ -384,17 +384,16 @@
 /* ============ GLOBAL ============ */
 html, body {
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
-@media (max-width: 640px) {
-  html, body {
-    overflow-y: auto;
-    height: auto;
-  }
+/* Assistant page locks scroll (full-screen chat layout) */
+html.assistant-page,
+html.assistant-page body {
+  overflow-y: hidden;
+  height: 100%;
 }
 
 @keyframes tagline-shimmer {

@@ -2,6 +2,7 @@ import ItiSiteHeader from "@/components/iti-site-header"
 import ItiSiteFooter from "@/components/iti-site-footer"
 import type { Metadata } from "next"
 import "@/app/iti-home-base.css"
+import "@/app/iti-home-sections.css"
 import "@/app/iti-legal.css"
 
 export const metadata: Metadata = {
@@ -14,139 +15,228 @@ export default function PrivacyPolicyPage() {
     <div className="iti-page iti-legal-page">
       <ItiSiteHeader />
       <main>
-        {/* Hero */}
         <section className="iti-legal-hero">
           <div className="iti-inner">
             <div className="iti-legal-eyebrow">Legal</div>
             <h1 className="iti-legal-title">Privacy Policy</h1>
-            <p className="iti-legal-meta">Effective Date: April 13, 2025 &nbsp;·&nbsp; Last Updated: April 13, 2025</p>
+            <p className="iti-legal-meta">Imperial Tech Innovations — Governing Data Collection, Processing &amp; Protection</p>
+            <p className="iti-legal-meta" style={{ marginTop: "0.5rem" }}>Effective Date: April 20, 2026 &nbsp;·&nbsp; Last Updated: April 20, 2026</p>
           </div>
         </section>
 
-        {/* Body */}
         <section className="iti-legal-body">
           <div className="iti-inner">
             <div className="iti-legal-content">
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">01</div>
-                <h2 className="iti-legal-section-title">Introduction</h2>
+                <h2 className="iti-legal-section-title">Introduction &amp; Scope</h2>
                 <p className="iti-legal-text">
-                  Imperial Tech Innovations ("Imperial", "we", "our", or "us"), a technology brand of Imperial Healthcare Systems Pvt Ltd, is committed to protecting the privacy and security of your personal information. This Privacy Policy describes how we collect, use, disclose, and safeguard information when you visit our website, use our services, or interact with us.
+                  This Privacy Policy governs the collection, processing, storage, and protection of personal and business data by Imperial Tech Innovations ("Company", "we", "our", or "us"), a technology brand of Imperial Healthcare Systems Pvt Ltd (CIN: U62099HR2025PTC137921), registered in Gurugram, Haryana, India.
                 </p>
                 <p className="iti-legal-text">
-                  By using our website or services, you consent to the practices described in this policy. If you do not agree, please discontinue use of our services.
+                  By accessing our website, engaging our SaaS platforms, or availing our IT solution services, you acknowledge that you have read, understood, and consent to the practices described in this Policy.
                 </p>
+                <p className="iti-legal-text">This Policy applies to:</p>
+                <ul className="iti-legal-list">
+                  <li>Website visitors and prospective clients</li>
+                  <li>Existing clients and users of our SaaS platforms</li>
+                  <li>Individuals interacting with us through any communication channel</li>
+                  <li>Parties submitting data in connection with refund or compliance processes</li>
+                </ul>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">02</div>
                 <h2 className="iti-legal-section-title">Information We Collect</h2>
-                <p className="iti-legal-text">We may collect the following categories of information:</p>
+
+                <p className="iti-legal-text"><strong>a. Identity &amp; Contact Data</strong></p>
                 <ul className="iti-legal-list">
-                  <li><strong>Contact Information:</strong> Name, email address, phone number, company name, and country provided through enquiry forms or direct communication.</li>
-                  <li><strong>Project Information:</strong> Details about your business requirements, ERP needs, budget, and project scope voluntarily submitted through our forms.</li>
-                  <li><strong>Usage Data:</strong> IP address, browser type, pages visited, time spent, and referring URLs collected automatically via analytics tools.</li>
-                  <li><strong>Communication Records:</strong> Emails, chat messages, and call records where applicable and legally permitted.</li>
-                  <li><strong>Payment Information:</strong> Billing details processed through secure third-party payment processors; we do not store raw card data.</li>
+                  <li>Full name, corporate email address, phone number</li>
+                  <li>Company name, professional designation, and location</li>
                 </ul>
+
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>b. Business &amp; Project Data</strong></p>
+                <ul className="iti-legal-list">
+                  <li>Technical requirements, project scope, timelines, and budgets</li>
+                  <li>Proprietary business workflows shared for service delivery</li>
+                </ul>
+
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>c. Technical &amp; Usage Data</strong></p>
+                <ul className="iti-legal-list">
+                  <li>IP address, browser type, device identifiers</li>
+                  <li>Pages visited, session duration, and platform usage analytics</li>
+                </ul>
+
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>d. Financial &amp; Transaction Data</strong></p>
+                <ul className="iti-legal-list">
+                  <li>Billing details processed via secure, certified third-party payment processors and payment gateways</li>
+                  <li>We do not store raw card numbers or sensitive payment credentials</li>
+                </ul>
+
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>e. Communication Data</strong></p>
+                <ul className="iti-legal-list">
+                  <li>Emails, messages, call logs, and support interactions (where permitted by law)</li>
+                </ul>
+
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>f. Refund &amp; Compliance Data</strong></p>
+                <p className="iti-legal-text">
+                  Where applicable, we may collect government-issued identification documents, self-attested identity verification records, and bank account details submitted for authentication and lawful refund processing.
+                </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">03</div>
-                <h2 className="iti-legal-section-title">How We Use Your Information</h2>
-                <p className="iti-legal-text">We use collected information to:</p>
+                <h2 className="iti-legal-section-title">Legal Basis for Processing</h2>
+                <p className="iti-legal-text">
+                  We process personal data under the following lawful bases, in accordance with applicable law including the Digital Personal Data Protection Act, 2023 (India) and relevant international frameworks:
+                </p>
                 <ul className="iti-legal-list">
-                  <li>Respond to enquiries and provide requested services</li>
-                  <li>Design, develop, and deliver technology solutions tailored to your requirements</li>
-                  <li>Process payments and manage billing</li>
-                  <li>Send service updates, proposals, and project communications</li>
-                  <li>Improve our website, products, and service quality</li>
-                  <li>Comply with legal obligations and enforce agreements</li>
-                  <li>Send promotional communications (only with your consent; unsubscribe anytime)</li>
+                  <li><strong>Contractual Necessity</strong> — to deliver services as defined in the Statement of Work (SOW)</li>
+                  <li><strong>Legitimate Business Interests</strong> — for platform security, fraud prevention, and service improvement</li>
+                  <li><strong>Legal &amp; Regulatory Obligation</strong> — for taxation, audit, and anti-money laundering (AML) compliance</li>
+                  <li><strong>Explicit Consent</strong> — where required under applicable data protection law</li>
                 </ul>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">04</div>
-                <h2 className="iti-legal-section-title">Data Sharing & Disclosure</h2>
-                <p className="iti-legal-text">
-                  We do not sell, rent, or trade your personal information. We may share data with:
-                </p>
+                <h2 className="iti-legal-section-title">Use of Information</h2>
+                <p className="iti-legal-text">Data collected is used exclusively to:</p>
                 <ul className="iti-legal-list">
-                  <li><strong>Service Providers:</strong> Trusted third parties (hosting, email, analytics, payment processing) under strict confidentiality agreements.</li>
-                  <li><strong>Business Partners:</strong> Where necessary to deliver contracted services, with your awareness.</li>
-                  <li><strong>Legal Authorities:</strong> When required by law, court order, or governmental regulation.</li>
-                  <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, subject to confidentiality protections.</li>
+                  <li>Deliver SaaS products and IT services as contractually agreed</li>
+                  <li>Manage billing, contracts, client accounts, and operations</li>
+                  <li>Enhance platform performance and user experience</li>
+                  <li>Communicate service updates, project milestones, and proposals</li>
+                  <li>Ensure security, fraud prevention, and regulatory compliance</li>
+                  <li>Process and verify refund requests in accordance with our <a href="/legal/refund-policy" className="iti-legal-link">Payment &amp; Refund Policy</a></li>
                 </ul>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">05</div>
-                <h2 className="iti-legal-section-title">Data Retention</h2>
+                <h2 className="iti-legal-section-title">Data Sharing &amp; Disclosure</h2>
                 <p className="iti-legal-text">
-                  We retain personal data only as long as necessary to fulfil the purposes outlined in this policy, comply with legal obligations, resolve disputes, and enforce agreements. Client project data is typically retained for 5 years post-engagement unless otherwise agreed.
+                  We do not sell, rent, or trade personal data to any third party for commercial gain.
                 </p>
+                <p className="iti-legal-text">Data may be shared with:</p>
+                <ul className="iti-legal-list">
+                  <li>Trusted service providers (hosting, analytics, payment processors) bound by confidentiality obligations</li>
+                  <li>Business partners strictly to the extent required for service delivery</li>
+                  <li>Legal and regulatory authorities where required by applicable law</li>
+                  <li>Successors or acquirers in the event of a merger, acquisition, or corporate restructuring</li>
+                </ul>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">06</div>
-                <h2 className="iti-legal-section-title">Your Rights</h2>
-                <p className="iti-legal-text">Depending on your jurisdiction, you may have the right to:</p>
-                <ul className="iti-legal-list">
-                  <li>Access the personal data we hold about you</li>
-                  <li>Request correction of inaccurate or incomplete data</li>
-                  <li>Request deletion of your data (subject to legal retention requirements)</li>
-                  <li>Object to or restrict processing of your data</li>
-                  <li>Data portability where technically feasible</li>
-                  <li>Withdraw consent for marketing communications at any time</li>
-                </ul>
-                <p className="iti-legal-text">To exercise any of these rights, contact us at the address below.</p>
+                <h2 className="iti-legal-section-title">International Data Transfers</h2>
+                <p className="iti-legal-text">
+                  As a dual-jurisdiction organisation operating in India and the United States, data may be processed across borders. All cross-border transfers are conducted with appropriate contractual and technical safeguards to ensure lawful and secure handling of personal data in accordance with applicable law.
+                </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">07</div>
-                <h2 className="iti-legal-section-title">Cookies & Tracking</h2>
+                <h2 className="iti-legal-section-title">Data Retention</h2>
+                <ul className="iti-legal-list">
+                  <li>For the duration of the client relationship and active engagement</li>
+                  <li>Up to five (5) years post-engagement for legal, audit, and compliance purposes</li>
+                  <li>For extended periods where required by applicable law or regulatory obligation</li>
+                </ul>
                 <p className="iti-legal-text">
-                  We use cookies and similar tracking technologies to enhance your browsing experience, analyse traffic, and understand user behaviour. You may control cookie preferences through your browser settings. Disabling cookies may affect certain website functionality.
+                  Upon expiry of the retention period, data is securely archived or permanently deleted in accordance with our internal data governance protocols.
                 </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">08</div>
-                <h2 className="iti-legal-section-title">Security</h2>
+                <h2 className="iti-legal-section-title">Data Security</h2>
+                <p className="iti-legal-text">We implement enterprise-grade security controls including:</p>
+                <ul className="iti-legal-list">
+                  <li>AES-256 encryption for data at rest; SSL/TLS for data in transit</li>
+                  <li>Role-based access restrictions and multi-factor authentication</li>
+                  <li>Periodic security audits, vulnerability assessments, and penetration testing</li>
+                  <li>Controlled processing environments with restricted external access</li>
+                </ul>
                 <p className="iti-legal-text">
-                  We implement industry-standard technical and organisational security measures including SSL encryption, access controls, and regular security reviews. However, no transmission over the internet is entirely secure, and we cannot guarantee absolute security.
+                  While we apply rigorous security standards, no system guarantees absolute protection. We commit to responding promptly and transparently in the event of any security incident.
                 </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">09</div>
-                <h2 className="iti-legal-section-title">Third-Party Links</h2>
+                <h2 className="iti-legal-section-title">Cookies, Tracking &amp; User Consent</h2>
                 <p className="iti-legal-text">
-                  Our website may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their privacy policies independently.
+                  By accessing, browsing, or continuing to use this website, you acknowledge and consent to the use of cookies and similar tracking technologies by Imperial Tech Innovations for the purposes outlined below.
+                </p>
+                <p className="iti-legal-text">Cookies are used exclusively to:</p>
+                <ul className="iti-legal-list">
+                  <li>Enable core website functionality and platform performance</li>
+                  <li>Analyse user behaviour, traffic patterns, and usage analytics</li>
+                  <li>Enhance user experience and optimise service delivery</li>
+                </ul>
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>Explicit Affirmation:</strong></p>
+                <ul className="iti-legal-list">
+                  <li>Cookies are not used for unsolicited marketing, behavioural advertising, or third-party profiling without explicit user consent</li>
+                  <li>Personal data collected via cookies is used strictly for operational, analytical, and security purposes</li>
+                </ul>
+                <p className="iti-legal-text">
+                  Users retain full control over cookie preferences and may disable or restrict tracking technologies through browser settings. Disabling certain cookies may impact the functionality of the website.
                 </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">10</div>
-                <h2 className="iti-legal-section-title">Policy Updates</h2>
+                <h2 className="iti-legal-section-title">User Rights</h2>
+                <p className="iti-legal-text">Subject to applicable law, users and data subjects have the right to:</p>
+                <ul className="iti-legal-list">
+                  <li>Access, correct, or request deletion of their personal data</li>
+                  <li>Restrict or object to specific processing activities</li>
+                  <li>Withdraw consent at any time, without affecting the lawfulness of prior processing</li>
+                  <li>Request data portability in a structured, machine-readable format</li>
+                </ul>
                 <p className="iti-legal-text">
-                  We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date. Continued use of our services after changes constitutes acceptance of the revised policy.
+                  All rights requests may be directed to: <a href="mailto:info@imperialtechinnovations.com" className="iti-legal-link">info@imperialtechinnovations.com</a>
+                </p>
+                <p className="iti-legal-text" style={{ marginTop: "1rem" }}><strong>Grievance Officer (DPDP Act 2023 — India)</strong></p>
+                <p className="iti-legal-text">
+                  In accordance with the Digital Personal Data Protection Act, 2023, the designated Grievance Officer for India-based data subjects is reachable at <a href="mailto:info@imperialtechinnovations.com" className="iti-legal-link">info@imperialtechinnovations.com</a>. Grievances will be acknowledged within 48 hours and resolved within 30 days.
                 </p>
               </div>
 
               <div className="iti-legal-section">
                 <div className="iti-legal-section-num">11</div>
-                <h2 className="iti-legal-section-title">Contact Us</h2>
-                <p className="iti-legal-text">For privacy-related enquiries or to exercise your rights:</p>
+                <h2 className="iti-legal-section-title">Data Breach Response</h2>
+                <p className="iti-legal-text">In the event of a personal data breach, we will:</p>
+                <ul className="iti-legal-list">
+                  <li>Immediately investigate and contain the incident</li>
+                  <li>Notify affected users and relevant authorities within timelines required by applicable law</li>
+                  <li>Document the nature, scope, and remediation actions taken</li>
+                  <li>Implement preventive controls to mitigate recurrence</li>
+                </ul>
+              </div>
+
+              <div className="iti-legal-section">
+                <div className="iti-legal-section-num">12</div>
+                <h2 className="iti-legal-section-title">Children's Data</h2>
+                <p className="iti-legal-text">
+                  Our services are directed exclusively at businesses and professionals. We do not knowingly collect personal data from individuals under the age of 18. If we become aware that data has been collected from a minor, it will be deleted promptly.
+                </p>
+              </div>
+
+              <div className="iti-legal-section">
+                <div className="iti-legal-section-num">13</div>
+                <h2 className="iti-legal-section-title">Policy Updates &amp; Contact</h2>
+                <p className="iti-legal-text">
+                  We reserve the right to update this Privacy Policy periodically. Material changes will be communicated via website notice. Continued use of our services following any update constitutes acceptance of the revised Policy.
+                </p>
                 <div className="iti-legal-contact-box">
                   <p>
-                    <strong>Imperial Tech Innovations</strong> — a brand of Imperial Healthcare Systems Pvt Ltd<br />
-                    India: M15, Ground Floor, Regus, Welldone Tech Park, Sohna Road, Sector 48, Gurugram – 122018, Haryana<br />
-                    US: 212 N. 2nd St. STE 100, Richmond, KY 40475<br />
+                    <strong>Imperial Tech Innovations</strong><br />
                     Email: <a href="mailto:info@imperialtechinnovations.com">info@imperialtechinnovations.com</a><br />
-                    Phone: <a href="tel:+917358013585">+91 7358013585</a> &nbsp;|&nbsp; <a href="tel:+18599788780">+1-(859) 978-8780</a>
+                    Website: imperialtechinnovations.com<br />
+                    India: <a href="tel:+917358013585">+91 7358013585</a> &nbsp;|&nbsp; US: <a href="tel:+18599788780">+1-(859) 978-8780</a>
                   </p>
                 </div>
               </div>
