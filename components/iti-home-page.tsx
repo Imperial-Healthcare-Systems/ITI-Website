@@ -174,7 +174,7 @@ export default function ItiHomePage() {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, message, source: "imperia", kind: "get-started" }),
+        body: JSON.stringify({ name, email, phone, message, source: "imperia", kind: "contact" }),
       })
 
       if (!response.ok) {
