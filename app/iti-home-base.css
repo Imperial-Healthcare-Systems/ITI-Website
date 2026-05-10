@@ -318,6 +318,32 @@ body.iti-home-body {
   line-height: 1;
 }
 
+.iti-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.iti-footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-mid);
+  color: var(--silver);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.iti-footer-social-link:hover {
+  color: var(--gold);
+  border-color: var(--gold-strong);
+  background: var(--gold-ghost);
+  transform: translateY(-2px);
+}
+
 .iti-nav-links a:hover::after,
 .iti-nav-links a:focus-visible::after {
   width: 100%;

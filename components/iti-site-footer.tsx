@@ -1,6 +1,13 @@
-import { Phone } from "lucide-react"
+import { Phone, Instagram, Facebook, Linkedin, Twitter } from "lucide-react"
 import ItiBrandLogo from "@/components/iti-brand-logo"
 import { footerSections } from "@/components/iti-content"
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/imperialtechinnovations?igsh=YnR6c2VuOXppaWpz", Icon: Instagram },
+  { label: "Facebook",  href: "https://www.facebook.com/share/1ESRDq5rmJ/", Icon: Facebook },
+  { label: "X",         href: "https://x.com/ImperialTe26996", Icon: Twitter },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/company/imperial-tech-innovations/", Icon: Linkedin },
+]
 
 export default function ItiSiteFooter() {
   const year = new Date().getFullYear()
@@ -51,6 +58,23 @@ export default function ItiSiteFooter() {
                 </li>
               ))}
             </ul>
+
+            {section.title === "Contact" && (
+              <div className="iti-footer-socials">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="iti-footer-social-link"
+                  >
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
