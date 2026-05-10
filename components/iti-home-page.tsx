@@ -28,7 +28,7 @@ export default function ItiHomePage() {
 
   const [loaderValue, setLoaderValue] = useState(0)
   const [loaderDone, setLoaderDone] = useState(false)
-  const [ctaForm, setCtaForm] = useState({ name: "", email: "", phone: "", message: "" })
+  const [ctaForm, setCtaForm] = useState({ name: "", email: "", phone: "", message: "", consent: false })
   const [submitting, setSubmitting] = useState(false)
   const [formError, setFormError] = useState("")
   const [formSuccess, setFormSuccess] = useState(false)
@@ -146,7 +146,7 @@ export default function ItiHomePage() {
     }
   }, [])
 
-  function setCtaField(key: keyof typeof ctaForm, value: string) {
+  function setCtaField(key: keyof typeof ctaForm, value: string | boolean) {
     setCtaForm((f) => ({ ...f, [key]: value }))
     if (formError) setFormError("")
   }
@@ -166,6 +166,7 @@ export default function ItiHomePage() {
     }
     if (!phone)   { setFormError("Please enter your phone number."); return }
     if (!message) { setFormError("Please add a message."); return }
+    if (!ctaForm.consent) { setFormError("Please agree to receive communications before submitting."); return }
 
     setSubmitting(true)
     setFormError("")
@@ -183,7 +184,7 @@ export default function ItiHomePage() {
       }
 
       setFormSuccess(true)
-      setCtaForm({ name: "", email: "", phone: "", message: "" })
+      setCtaForm({ name: "", email: "", phone: "", message: "", consent: false })
     } catch (error: unknown) {
       setFormError(error instanceof Error ? error.message : "Unable to submit your request right now.")
     } finally {
@@ -537,6 +538,18 @@ export default function ItiHomePage() {
                   rows={4}
                 />
               </div>
+              <label className="iti-cta-consent">
+                <input
+                  type="checkbox"
+                  checked={ctaForm.consent}
+                  onChange={(e) => setCtaField("consent", e.target.checked)}
+                  className="iti-cta-consent-checkbox"
+                />
+                <span>
+                  Yes, I agree to receive messages from Imperial Tech Innovations via RCS messages, SMS, and other electronic communications. Message and data rates may apply. You can opt out at any time by replying STOP.{" "}
+                  <a href="/legal/privacy-policy" className="iti-cta-legal-link">Privacy Policy</a>
+                </span>
+              </label>
               {formError && <p className="iti-cta-error">{formError}</p>}
               <button className="iti-cta-submit" type="submit" disabled={submitting}>
                 {submitting ? "Sending…" : "Send Message"}
